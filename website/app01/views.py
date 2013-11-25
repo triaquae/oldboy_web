@@ -4,6 +4,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+import models 
 import datetime,os,json,time
 
 
@@ -26,7 +27,8 @@ def onLineCourse(request):
 def bbs(request):
         return render_to_response('bbs.html')
 def news(request):
-        return render_to_response('news.html')
+	news_list = models.news.objects.all()
+        return render_to_response('news.html', {'news_list': news_list})
 def contact(request):
         return render_to_response('contact.html')
 
