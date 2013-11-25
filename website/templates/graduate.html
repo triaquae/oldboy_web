@@ -2,42 +2,24 @@
 <html>
 
 <head>
-		<meta charset="utf-8">
-		<title>Merovingio - Responsive Bootstrap Template</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="stylesheet" href="/static/css/bootstrap.css">
-		<link rel="stylesheet" href="/static/css/font-awesome.css">
-		<link rel="stylesheet" href="/static/css/theme.css">
-		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Patua+One'>
-		<!--[if lt IE 9]>
-			<link rel="stylesheet" href="/static/renata/font-awesome-ie7.css">
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link rel="shortcut icon" href="favicon.ico">
 	{%block header%}
-	        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
-                <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,700' rel='stylesheet' type='text/css'>
-                
                 <!-- Styles -->
                 <!-- Bootstrap CSS -->
-                <link href="/static/renata/bootstrap.min.css" rel="stylesheet">
                 <!-- Animate CSS -->
-                <link href="/static/renata/animate.min.css" rel="stylesheet">
+                <link href="/static/renata/css/animate.min.css" rel="stylesheet">
                 <!-- Slider Revolution CSS -->
-                <link href="/static/renata/rs-settings.css" rel="stylesheet">
+                <link href="/static/renata/css/rs-settings.css" rel="stylesheet">
                 <!--[if IE 8]>
                 <link rel="stylesheet" href="/static/renata/rs-settings-ie8.css">
                 <![endif]-->
                 <!-- Countdown Watch -->
-                <link href="/static/renata/jquery.countdown.css" rel="stylesheet">
+                <link href="/static/renata/css/jquery.countdown.css" rel="stylesheet">
                 <!-- Portfolio CSS -->
-                <link href="/static/renata/prettyPhoto.css" rel="stylesheet">
+                <link href="/static/renata/css/prettyPhoto.css" rel="stylesheet">
                 <!-- Font awesome CSS -->
-                <link href="/static/renata/font-awesome.min.css" rel="stylesheet">         
+                <link href="/static/renata/css/font-awesome.min.css" rel="stylesheet">         
                 <!-- Custom CSS -->
-                <link href="/static/renata/style.css" rel="stylesheet">
+                <link href="/static/renata/css/style.css" rel="stylesheet">
                 <!--[if IE]>
                 <link rel="stylesheet" href="/static/renata/ie-style.css">
                 <![endif]-->
@@ -48,33 +30,35 @@
 </head>
 
 <body>
-{% block page-content%}  
+{% block page-content %}  
 <h2>学员就业</h2>
         <hr>
 学生就业
-			<div class="col-md-4 col-sm-4">
+<div class="testimonial">
+	{% if student_list %}
+		{%for student in student_list%}
+		  {%   if forloop.counter|divisibleby:3%}
+			<div class="row">
+		  {% endif %}
+			<div class="col-md-4 col-sm-4" style="width:30%;float:left;margin-left:15px;padding:10 10 10 10 ">
 				<!-- testimonial content -->
-				<div class="testimonial-content t-one animated">
+				<div class="testimonial-content t-one animated" >
 					<!-- User's image , name and designation -->
-					<h4><img src="/static/renata/img/user-xs.jpg" alt="" class="img-responsive img-circle"/>H. Rackham<span>, Atr Director</span></h4>
+					<h4><img src="/static/renata/img/user-xs.jpg" alt="" class="img-responsive img-circle"/>H. {{ student.student_name }}<span>, {{  student.title}}</span></h4>
 					<!-- User's comment -->
-					<blockquote class="br-orange">
-						<p>Sed ut perspiciatis unde omnis iste natust error sit vol accusantium doloremque and laudantium, totam rem aperiam, eaque an ipsa quae abe illo explicabo. An oiuk nesciunt.</p>
+					<blockquote class="{{ student.color }}">
+					   <div style="margin-right:10px">
+						<p style="padding-right:10px;margin-right:10px"> {{student.comments}}</p>
+					  </div>
 					</blockquote>
 				</div>
 			</div>
-						<div class="col-md-4 col-sm-4">
-                                                        <!-- testimonial content -->
-                                                        <div class="testimonial-content t-two animated">
-                                                                <!-- User's image , name and designation -->
-                                                                <h4><img src="img/user-xs.jpg" alt="" class="img-responsive img-circle"/>Bum Malorum<span>, M. D.</span></h4>
-                                                                <!-- User's comment -->
-                                                                <blockquote class="br-lblue" style="background-color:orange">
-                                                                        <p>Sed ut perspiciatis unde omnis iste natust error sit vol accusantium doloremque and laudantium, totam rem aperiam, eaque an ipsa quae abe illo explicabo. An oiuk nesciunt.</p>
-                                                                </blockquote>
-                                                        </div>
-                                                </div>
-
+		  {%   if forloop.counter|divisibleby:3%}
+                        </div>
+                  {% endif %}
+		{% endfor%}
+	{% endif%}
+		</div>
                 <!-- Footer End -->
 
                 <!-- Javascript files -->

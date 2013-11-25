@@ -18,7 +18,8 @@ def courses(request):
 	return render_to_response('courses.html')
 
 def graduate(request):
-        return render_to_response('graduate.html')
+	student_list = models.graduates.objects.all()
+        return render_to_response('graduate.html',{'student_list':student_list})
                                                  
 def enroll(request):
 	question_list = models.questions.objects.all()

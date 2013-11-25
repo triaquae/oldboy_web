@@ -8,36 +8,46 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'web_user'
-        db.create_table(u'app01_web_user', (
+        # Adding model 'graduates'
+        db.create_table(u'app01_graduates', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'], null=True)),
-            ('email', self.gf('django.db.models.fields.EmailField')(max_length=75)),
-            ('photo', self.gf('django.db.models.fields.CharField')(max_length=100, blank=True)),
+            ('student_name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=30)),
+            ('photo', self.gf('django.db.models.fields.CharField')(max_length=100)),
+            ('title', self.gf('django.db.models.fields.CharField')(max_length=30)),
+            ('company', self.gf('django.db.models.fields.CharField')(unique=True, max_length=50)),
+            ('comments', self.gf('django.db.models.fields.TextField')()),
+            ('color', self.gf('django.db.models.fields.CharField')(max_length=100)),
         ))
-        db.send_create_signal(u'app01', ['web_user'])
-
-        # Adding model 'news'
-        db.create_table(u'app01_news', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('headline', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
-            ('author', self.gf('django.db.models.fields.CharField')(max_length=30)),
-            ('publish_date', self.gf('django.db.models.fields.DateTimeField')()),
-            ('news_type', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('content', self.gf('django.db.models.fields.TextField')()),
-        ))
-        db.send_create_signal(u'app01', ['news'])
+        db.send_create_signal(u'app01', ['graduates'])
 
 
     def backwards(self, orm):
-        # Deleting model 'web_user'
-        db.delete_table(u'app01_web_user')
-
-        # Deleting model 'news'
-        db.delete_table(u'app01_news')
+        # Deleting model 'graduates'
+        db.delete_table(u'app01_graduates')
 
 
     models = {
+        u'app01.graduates': {
+            'Meta': {'object_name': 'graduates'},
+            'color': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'comments': ('django.db.models.fields.TextField', [], {}),
+            'company': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '50'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'photo': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
+            'student_name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'}),
+            'title': ('django.db.models.fields.CharField', [], {'max_length': '30'})
+        },
+        u'app01.new_classes': {
+            'Meta': {'object_name': 'new_classes'},
+            'class_name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
+            'course_term': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'limited': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'method': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            'number': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            'start_date': ('django.db.models.fields.DateField', [], {}),
+            'students': ('django.db.models.fields.CharField', [], {'max_length': '30'})
+        },
         u'app01.news': {
             'Meta': {'object_name': 'news'},
             'author': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
@@ -46,6 +56,13 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'news_type': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'publish_date': ('django.db.models.fields.DateTimeField', [], {})
+        },
+        u'app01.questions': {
+            'Meta': {'object_name': 'questions'},
+            'answer': ('django.db.models.fields.TextField', [], {}),
+            'display_order': ('django.db.models.fields.IntegerField', [], {'default': '1000'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'question': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '150'})
         },
         u'app01.web_user': {
             'Meta': {'object_name': 'web_user'},

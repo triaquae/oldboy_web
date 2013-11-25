@@ -8,36 +8,49 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'web_user'
-        db.create_table(u'app01_web_user', (
+        # Adding model 'new_classes'
+        db.create_table(u'app01_new_classes', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['auth.User'], null=True)),
-            ('email', self.gf('django.db.models.fields.EmailField')(max_length=75)),
-            ('photo', self.gf('django.db.models.fields.CharField')(max_length=100, blank=True)),
+            ('class_name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
+            ('number', self.gf('django.db.models.fields.CharField')(max_length=30)),
+            ('start_date', self.gf('django.db.models.fields.DateField')()),
+            ('course_term', self.gf('django.db.models.fields.CharField')(max_length=30)),
+            ('method', self.gf('django.db.models.fields.CharField')(max_length=30)),
+            ('students', self.gf('django.db.models.fields.CharField')(max_length=30)),
+            ('limited', self.gf('django.db.models.fields.BooleanField')(default=False)),
         ))
-        db.send_create_signal(u'app01', ['web_user'])
+        db.send_create_signal(u'app01', ['new_classes'])
 
-        # Adding model 'news'
-        db.create_table(u'app01_news', (
+        # Adding model 'questions'
+        db.create_table(u'app01_questions', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('headline', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
-            ('author', self.gf('django.db.models.fields.CharField')(max_length=30)),
-            ('publish_date', self.gf('django.db.models.fields.DateTimeField')()),
-            ('news_type', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('content', self.gf('django.db.models.fields.TextField')()),
+            ('question', self.gf('django.db.models.fields.CharField')(unique=True, max_length=150)),
+            ('answer', self.gf('django.db.models.fields.TextField')()),
+            ('display_order', self.gf('django.db.models.fields.IntegerField')(default=1000)),
         ))
-        db.send_create_signal(u'app01', ['news'])
+        db.send_create_signal(u'app01', ['questions'])
 
 
     def backwards(self, orm):
-        # Deleting model 'web_user'
-        db.delete_table(u'app01_web_user')
+        # Deleting model 'new_classes'
+        db.delete_table(u'app01_new_classes')
 
-        # Deleting model 'news'
-        db.delete_table(u'app01_news')
+        # Deleting model 'questions'
+        db.delete_table(u'app01_questions')
 
 
     models = {
+        u'app01.new_classes': {
+            'Meta': {'object_name': 'new_classes'},
+            'class_name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
+            'course_term': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'limited': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
+            'method': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            'number': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
+            'start_date': ('django.db.models.fields.DateField', [], {}),
+            'students': ('django.db.models.fields.CharField', [], {'max_length': '30'})
+        },
         u'app01.news': {
             'Meta': {'object_name': 'news'},
             'author': ('django.db.models.fields.CharField', [], {'max_length': '30'}),
@@ -46,6 +59,13 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'news_type': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'publish_date': ('django.db.models.fields.DateTimeField', [], {})
+        },
+        u'app01.questions': {
+            'Meta': {'object_name': 'questions'},
+            'answer': ('django.db.models.fields.TextField', [], {}),
+            'display_order': ('django.db.models.fields.IntegerField', [], {'default': '1000'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'question': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '150'})
         },
         u'app01.web_user': {
             'Meta': {'object_name': 'web_user'},

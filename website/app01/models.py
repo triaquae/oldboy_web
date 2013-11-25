@@ -36,6 +36,16 @@ class new_classes(models.Model):
 	limited = models.BooleanField(default=False,verbose_name='Seat limited')
 	def __unicode__(self):
                 return self.number
+
+
+class graduates(models.Model):
+	student_name = models.CharField(max_length=30, unique=True)
+	photo = models.CharField(max_length=100)
+	title = models.CharField(max_length=30)
+	company = models.CharField(max_length=50, unique=True)
+	comments = models.TextField()	
+	color_choice = (('br-orange','orange'), ('br-green', 'green'), ('br-blue','blue'),('br-red','red'),('br-lblue','light-blue'),('br-black',('black')))
+        color = models.CharField(max_length=100, choices= color_choice)
 '''
 class IP(models.Model):
     hostname=models.CharField(max_length=50, unique=True)

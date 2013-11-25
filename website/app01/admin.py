@@ -21,7 +21,9 @@ class QuestionAdmin(admin.ModelAdmin):
 	list_display = ('question', 'display_order')
 class NewClassAdmin(admin.ModelAdmin):
         list_display = ('class_name', 'number','start_date','method' )
-
+class GraduateAdmin(admin.ModelAdmin):
+        list_display = ('student_name', 'title','company','color' )
+admin.site.register(graduates,GraduateAdmin)
 admin.site.register(new_classes,NewClassAdmin)
 admin.site.register(questions,QuestionAdmin)
 admin.site.register(news,NewsAdmin)
