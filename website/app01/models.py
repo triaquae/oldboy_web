@@ -33,11 +33,14 @@ class teachers(models.Model):
 	social_blog_name = models.CharField(max_length=30)
 	social_blog_url = models.URLField()
 	introduction = models.TextField()
+class course_tags(models.Model):
+	tag = models.CharField(max_length=20, unique=True)
 class online_course(models.Model):
 	course_name = models.CharField(max_length=100, unique=True)
 	description = models.CharField(max_length=100, unique=True)
 	course_url = models.URLField()
 	img_link = models.CharField(max_length=100, unique=True)
+	tag_name = models.ManyToManyField(course_tags) 
 	display_order = models.IntegerField(default=1000)
 class new_classes(models.Model):
 	class_name = models.CharField(max_length=100, unique=True)

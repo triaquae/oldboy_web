@@ -14,7 +14,7 @@
 					<div class="thumbnail">
 						<a class="js-fancybox" rel="album" title="Fancybox Image Gallery" target="blank" href="{{course.course_url}}"><img src="/static/assets/item-small.png" alt=""></a>
 						<h5>{{ course.course_name}}Linux中高级运维实战就业班</h5>
-						<p>{{ course.description}}Description</p>
+						<p class="{% for i in course.tag_name.values%}{{i.tag}}{%endfor%} ">{{ course.description}}Description   | {{course.tag_name.values_list|slice:'i'}}</p>
 					</div>
 				</li>
 				<!--li class="span3 cat-2">

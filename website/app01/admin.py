@@ -27,6 +27,7 @@ class GraduateAdmin(admin.ModelAdmin):
 class onLineCourseAdmin(admin.ModelAdmin):
         list_display = ('course_name', 'course_url','description' )
 
+admin.site.register(course_tags)
 admin.site.register(teachers)
 admin.site.register(online_course,onLineCourseAdmin)
 admin.site.register(graduates,GraduateAdmin)
