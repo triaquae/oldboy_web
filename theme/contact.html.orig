@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Merovingio - Responsive Bootstrap Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Patua+One'>
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/font-awesome-ie7.css">
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link rel="shortcut icon" href="favicon.ico">
+	</head>
+
+	<body>
+	<!-- page wrapper -->
+	<div class="container wrapper">
+		<header>
+			<div class="row">
+				<div class="span4">
+					<h1>
+						<a href="index.html"><img src="assets/logo.jpg" alt=""></a>
+					</h1>
+				</div>
+				<div class="span4">
+					<ul class="social-media">
+						<li><a href="#"><i class="icon icon-twitter-sign"></i></a></li>
+						<li><a href="#"><i class="icon icon-facebook-sign"></i></a></li>
+						<li><a href="#"><i class="icon icon-google-plus-sign"></i></a></li>
+						<li><a href="#"><i class="icon icon-pinterest-sign"></i></a></li>
+					</ul>
+				</div>
+				<div class="span4">
+					<form>
+						<div class="input-append">
+							<input class="span2" id="appendedInputButtons" type="text">
+							<button class="btn btn-primary" type="button">Search</button>
+						</div>
+					</form>
+				</div><!-- /.span -->
+			</div><!-- /.row -->
+		</header>
+			
+		<div class="row">
+			<div class="span12">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a>
+							<a class="brand" href="index.html">Merovingio</a>
+							<div class="nav-collapse collapse">
+								<ul class="nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About</a></li>
+									<li><a href="portfolio.html">Portfolio</a></li>
+									<li><a href="pricing.html">Pricing</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li class="active"><a href="contact.html">Contact</a></li>
+									<li class="dropdown">
+										<a class="dropdown-toggle" data-toggle="dropdown" href="#">More <b class="caret"></b></a>
+										<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+											<li>
+												<a href="#">New Products and Catalogs</a>
+												<a href="#">Latests Offers and More</a>
+												<a href="#">All Products Discount</a>
+											</li>
+										</ul>
+									</li>
+								</ul> <!-- /.nav -->
+							</div> <!-- /.nav-collapse -->
+						</div><!-- /container -->
+					</div><!-- /navbar-inner -->
+				</div><!-- /navbar -->
+			</div><!-- /row -->
+		</div><!-- /span12 phew! -->
+
+		<div class="row">
+			<div class="span12">
+				<h2>How To Get In Touch</h2>
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				<h3>See what’s what.</h3>
+				<p>We here at Merovingio have proven we know that it is better to brand ultra-seamlessly than to aggregate efficiently. We will generate the ability of all-hands meetings to incentivize. What do we deliver? Anything and everything, regardless of standing! Our technology takes the best features of Python and OWL. Your budget for productizing should be at least one-third of your budget for reintermediating.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span4">
+				<h3>Our Location</h3>
+				<img src="assets/map.png" alt="">
+			</div>
+			<div class="span4">
+				<h3>Contact Info</h3>
+				<div class="well">
+					<p><strong>Company Address:</strong></p>
+					<hr>
+					<p>
+						Greg L. Denney <br>
+						4209 Scenicview Drive <br>
+						Redmond, WA 98052 <br>
+						Tel.: +1.123.456.789
+					</p>
+					<hr>
+					<p>Don't hesitate to contact us about anything you want. We are open to questios, comments and suggestions.</p>
+				</div>
+			</div>
+			<div class="span4">
+				<h3>Email Us</h3>
+					<form class="form">
+						<label for="name">Your name:</label>
+						<input class="span4" type="text" id="name" placeholder="">
+						
+						<label for="inputEmail">Email:</label>
+						<input class="span4" type="text" id="inputEmail" placeholder="">
+						
+						<label for="message">Your message:</label>
+						<textarea class="span4" rows="4" id="message" placeholder=""></textarea>
+						
+						<label class="checkbox">
+							<input type="checkbox"> Send me a copy
+						</label>
+						<button type="submit" class="btn btn-primary">Alright sparky, send it.</button>
+					</form>
+			</div>
+		</div><!-- /.row -->
+
+		<div class="row">
+			<div class="span12">
+				<h3><span>Privacy Policy</span></h3>
+				<div class="alert centered">
+					<strong>Our privacy policy</strong>
+					Our website does not share personal information of any kind with anyone. We will not sell or rent your name or personal information to any third party. We DO NOT sell, rent or provide outside access to our mailing list or any data we store. Any data that a user stores via our facilities is wholly owned by that user or business. At any time a user or business is free to take their data and leave, or to simply delete their data from our facilities.   
+					Our website only collects such personal information that is necessary for you to access and use our services. This personal information includes, but is not limited to, first and last name, physical address, zip code, email address, phone number, social security number, birth date, credit card information, financial information, and other personal information necessary to generate proper legal documents.
+				</div>
+			</div>
+		</div>
+
+
+
+	</div><!-- /.container (page container)-->
+
+	<footer>
+		<div class="container">
+			<!-- row of widgets -->
+			<div class="row">
+				<div class="span3">
+					<h4>About Us</h4>
+					<p>Technology should be about more than newest, loudest, prettiest. It should make a difference.. <a href="#">Aenean</a> nisl orci, condimentum.</p>
+					<p>We take what’s familiar and look at it in a new light. Our team focuses on making technology that’s simple, fresh and helpful.</p>
+				</div> <!-- /.span3 -->
+
+				<hr class="visible-phone">
+				
+				<div class="span3">
+					<h4>Featured Categories</h4>
+					<ul>
+						<li><a href="#">Payment Gateway Processors</a> <small>Hot Topic</small></li>
+						<li><a href="#">User Experience</a></li>
+						<li><a href="#">Front-End Develpment</a></li>
+						<li><a href="#">CSS Pre-Processors</a> <small>Hot Topic</small></li>
+						<li><a href="#">Web Platfoms</a></li>
+						<li><a href="#">HTML5 The Ubiquitous Platform</a> <small>Hot Topic</small></li>
+					</ul>
+				</div><!-- /.span3 -->
+
+				<hr class="visible-phone">
+				
+				<div class="span3">
+					<h4>Popular Tags Monthly</h4>
+					<ul class="tag-cloud">
+						<li><a href="#">styles</a></li>
+						<li><a href="#">layout</a></li>
+						<li><a href="#">letterpress</a></li>
+						<li><a href="#">magazine</a></li>
+						<li><a href="#">menu</a></li>
+						<li><a href="#">metal</a></li>
+						<li><a href="#">navigation</a></li>
+						<li><a href="#">paper</a></li>
+						<li><a href="#">print</a></li>
+						<li><a href="#">scripts</a></li>
+						<li><a href="#">nodes</a></li>
+					</ul>
+				</div><!-- /.span3 -->
+
+				<hr class="visible-phone">
+				
+				<div class="span3">
+					<h4>Subscribe to our Newsletter</h4>
+					<form class="footer-form">
+						<fieldset>
+							<label>Get our email weekly newsletter</label>
+							<input type="text" placeholder="Enter your email">
+							<span class="help-block">No spam, we promise!</span>
+							<button type="submit" class="btn btn-primary">Subscribe</button>
+						</fieldset>
+					</form>
+				</div> <!-- /.span3 -->
+			</div> <!-- /.row -->
+		</div><!-- /.container -->
+
+		<div class="bottom-line">
+			<div class="container">
+				<p class="pull-right"><a href="#">Back to top</a></p>
+				<p>&copy; 2013 Designed by <a href="http://twitter.com/heyallanmoreno" target="_blank">@heyallanmoreno</a> | <a href="#"><i class="icon icon-twitter"></i></a> | <a href="#"><i class="icon icon-facebook"></i></a> | <a href="#"><i class="icon icon-google-plus"></i></a> | <a href=""><i class="icon icon-pinterest"></i></a></p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- last but not least the javascript -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.8.2.min.js"><\/script>')</script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			//bootstrap tooltip trigger
+			$('[rel="tooltip"]').tooltip();
+		});
+	</script>
+
+	</body>
+</html>
