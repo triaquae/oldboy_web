@@ -53,16 +53,17 @@
 					<div class="navbar-inner">
 						<div class="container">
 							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a>
-							<a class="brand" href="index.html">首页</a>
+							<a class="brand" href="/">首页</a>
 							<div class="nav-collapse collapse">
 								<ul class="nav">
-									<li class="active"><a href="index.html">关于我们</a></li>
-									<li><a href="about.html">课程介绍</a></li>
-									<li><a href="portfolio.html">学生就业</a></li>
-									<li><a href="pricing.html">报名</a></li>
-									<li><a href="blog.html">免费讲座</a></li>
-									<li><a href="contact.html">校内BBS</a></li>
-									<li><a href="contact.html">联系</a></li>
+									<li class="active"><a href="/">关于我们</a></li>
+									<li><a href="/courses/">课程介绍</a></li>
+									<li><a href="/graduate/">学生就业</a></li>
+									<li><a href="/enroll/">报名</a></li>
+									<li><a href="/onLineCourse/">在线试听</a></li>
+									<li><a href="/bbs/">校内BBS</a></li>
+									<li><a href="/news/">行业动态</a></li>
+									<li><a href="/contact/">联系</a></li>
 									<li class="dropdown">
 										<a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">More <b class="caret"></b></a>
 										<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -80,7 +81,8 @@
 				</div><!-- /navbar -->
 			</div><!-- /row -->
 		</div><!-- /span12 whoa! -->
-			
+	<div id="page-content">	
+	{%  block page-content %}
 		<div class="row">
 			<div class="span12">
 				<div id="home-carousel" class="carousel slide">
@@ -103,7 +105,7 @@
 		<div class="row">
 			<div class="span12">
 				<div class="well centered">
-					<h3>Linux 高级运维架构师火热报名中, Python运维开发课程全面升级 <a class="btn btn-primary btn-large" href="index.html#">了解更多 <i class="icon icon-caret-right"></i></a></h3>
+					<h3>Linux 高级运维架构师火热报名中, Python运维开发课程全面升级 <a class="btn btn-primary btn-large" href="/courses/">了解更多 <i class="icon icon-caret-right"></i></a></h3>
 				</div>
 			</div>
 		</div>
@@ -112,7 +114,7 @@
 			<div class="span3">
 				<div class="info-column">
 					<img class="img-rounded" src="/static/assets/team-1.jpg" alt="">
-					<h3><i class="icon icon-beaker"></i> Linux中高级运维实战就业班</h3>
+					<h3>Linux中高级运维实战就业班</h3>
 					<p>When considering redesigning your <a href="index.html#">company website</a>, one of the best things you can do to prepare is to research what you want. That's all you need to know.</p>
 					<a class="btn btn-primary" href="index.html#">详细 &raquo;</a>
 				</div>
@@ -120,7 +122,7 @@
 			<div class="span3">
 				<div class="info-column">
 					<img class="img-rounded" src="/static/assets/team-2.jpg" alt="">
-					<h3><i class="icon icon-cloud"></i> Linux高级运维架构师</h3>
+					<h3>Linux高级运维架构师</h3>
 					<p>Get a handle on your finances the free and fast way. Mint does all the work of organizing and categorizing your spending for you. See where every dime goes and make money.</p>
 					<a class="btn btn-primary" href="index.html#">详细 &raquo;</a>
 				</div>
@@ -128,7 +130,7 @@
 			<div class="span3">
 				<div class="info-column">
 					<img class="img-rounded" src="/static/assets/team-3.jpg" alt="">
-					<h3><i class="icon icon-inbox"></i> Python高级运维开发课程</h3>
+					<h3>Python高级运维开发课程</h3>
 					<p>Just click on what you want to accomplish with your money. Mint gives you the simple steps for getting there, along with free advice, gentle reminders, and encouragement.</p>
 					<a class="btn btn-primary" href="index.html#">详细 &raquo;</a>
 				</div>
@@ -136,7 +138,7 @@
 			<div class="span3">
 				<div class="info-column">
 					<img class="img-rounded" src="/static/assets/team-4.jpg" alt="">
-					<h3><i class="icon icon-refresh"></i> C语言系统运维开发大师课程</h3>
+					<h3>C语言系统运维开发大师课程</h3>
 					<p>It’s easier to stick to a budget designed for your lifestyle. Mint automatically creates one tailored just for you and keeps you on track with email and mobile alerts.</p>
 					<a class="btn btn-primary" href="index.html#">详细 &raquo;</a>
 				</div>
@@ -152,8 +154,9 @@
 			</div>
 		</div>
 
+	{% endblock %}
 	</div><!-- /.container (page container)-->
-
+	</div> <!--page-content-->
 	<footer>
 		<div class="container">
 			<!-- row of widgets -->

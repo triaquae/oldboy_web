@@ -15,4 +15,12 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
 		(r'^$',index),	
+	(r'^courses/$', courses),
+	(r'^graduate/$', graduate),
+	(r'^enroll/$', enroll),
+	(r'^onLineCourse/$', onLineCourse),
+	(r'^bbs/$', bbs),
+	(r'^news/$', news),
+	(r'^contact/$', contact),
+
 )
