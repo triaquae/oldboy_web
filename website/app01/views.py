@@ -10,7 +10,8 @@ import datetime,os,json,time
 def index(request):
 
 	return render_to_response('index.html')
-
+def about(request):
+	return render_to_response('about.html')
 
 def courses(request):
 	return render_to_response('courses.html')
