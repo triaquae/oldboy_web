@@ -1,5 +1,10 @@
 # Django settings for website project.
+<<<<<<< HEAD
 site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
+=======
+site_path ='/var/www/sites/oldboy_web/website'
+#site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
+>>>>>>> 46e5752c42b384d5a1aacd4e734aaa7b31d35a3e
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -11,11 +16,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'oldboy_web',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'alex3714',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
@@ -29,12 +34,13 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
-
+LANGUAGE_CODE = 'zh-cn'
+FILE_CHARSET = 'utf-8'
+DEFAULT_CHARSET = 'utf-8'
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -126,6 +132,7 @@ INSTALLED_APPS = (
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
+	'app01',
 )
 
 # A sample logging configuration. The only tangible logging
