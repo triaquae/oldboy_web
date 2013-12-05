@@ -12,6 +12,34 @@
 	//opacity: 0.333;
 	filter: alpha(opacity=30);
 }
+.thumbnail>img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: 3px solid #16a085;
+}
+.img-circle {
+	border-radius: 50%;
+}
+.thumbnail-badges {
+	list-style: none;
+	padding: 0;
+	text-align: center;
+	-webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+	-moz-box-shadow: 0 0 0 0 rgba(0,0,0,0);
+	box-shadow: 0 0 0 0 rgba(0,0,0,0);
+}
 
-
-
+.thumbnail {
+	padding: 4px;
+	line-height: 1.428571429;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
