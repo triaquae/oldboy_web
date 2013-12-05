@@ -20,6 +20,10 @@ class news(models.Model):
 	content = models.TextField()	
         def __unicode__(self):
         	return self.headline
+class questions(models.Model):
+	question =  models.CharField(max_length=150, unique=True)
+	answer =  models.TextField()
+	display_order = models.IntegerField(default=1000)
 '''
 class IP(models.Model):
     hostname=models.CharField(max_length=50, unique=True)

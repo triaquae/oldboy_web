@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 <html>
 
 <head>
@@ -19,8 +19,14 @@
 </head>
 
 <body>
-{% block page-content%}  
-招生报名
-{% endblock %}
+{% block page-content%}
+	<h2>学员关心的问题</h2>
+	<hr>
+{%  for question in question_list%}
+	<h4>{{question.question}}</h4>
+	<pre>{{question.answer}}</pre>
+{% endfor %}
+
+{% endblock%}
 </body>
 </html>

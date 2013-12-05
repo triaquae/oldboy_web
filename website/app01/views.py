@@ -21,7 +21,8 @@ def graduate(request):
         return render_to_response('graduate.html')
                                                  
 def enroll(request):
-	return render_to_response('enroll.html') 
+	question_list = models.questions.objects.all()
+	return render_to_response('enroll.html',{'question_list': sorted(question_list) }) 
 
 def onLineCourse(request):
         return render_to_response('onLineCourse.html')

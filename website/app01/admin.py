@@ -17,7 +17,10 @@ class NewsAdmin(admin.ModelAdmin):
 class WebUserAdmin(admin.ModelAdmin):
     #search_fields = ('host','host_status')
     pass
+class QuestionAdmin(admin.ModelAdmin):
+	list_display = ('question', 'display_order')
 
 
+admin.site.register(questions,QuestionAdmin)
 admin.site.register(news,NewsAdmin)
 admin.site.register(web_user,WebUserAdmin)

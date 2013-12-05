@@ -1,10 +1,7 @@
 # Django settings for website project.
-<<<<<<< HEAD
-site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
-=======
-site_path ='/var/www/sites/oldboy_web/website'
-#site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
->>>>>>> 46e5752c42b384d5a1aacd4e734aaa7b31d35a3e
+#site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
+#site_path ='/var/www/sites/oldboy_web/website'
+site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -38,9 +35,9 @@ TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'zh-cn'
-FILE_CHARSET = 'utf-8'
-DEFAULT_CHARSET = 'utf-8'
+LANGUAGE_CODE = 'us-en'
+#FILE_CHARSET = 'utf-8'
+#DEFAULT_CHARSET = 'utf-8'
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -133,6 +130,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
 	'app01',
+	'south',
 )
 
 # A sample logging configuration. The only tangible logging
