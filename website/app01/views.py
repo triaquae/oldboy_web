@@ -24,6 +24,9 @@ def enroll(request):
 	question_list = models.questions.objects.all()
 	return render_to_response('enroll.html',{'question_list': sorted(question_list) }) 
 
+def newClass(request):
+	new_classes = models.new_classes.objects.all()
+	return render_to_response('newClass.html', {'new_classes': new_classes})
 def onLineCourse(request):
         return render_to_response('onLineCourse.html')
 def bbs(request):

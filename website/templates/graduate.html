@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 <html>
 
 <head>
@@ -12,15 +12,97 @@
 		<link rel="stylesheet" href="/static/css/theme.css">
 		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Patua+One'>
 		<!--[if lt IE 9]>
-			<link rel="stylesheet" href="css/font-awesome-ie7.css">
+			<link rel="stylesheet" href="/static/renata/font-awesome-ie7.css">
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link rel="shortcut icon" href="favicon.ico">
+	{%block header%}
+	        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
+                <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,700' rel='stylesheet' type='text/css'>
+                
+                <!-- Styles -->
+                <!-- Bootstrap CSS -->
+                <link href="/static/renata/bootstrap.min.css" rel="stylesheet">
+                <!-- Animate CSS -->
+                <link href="/static/renata/animate.min.css" rel="stylesheet">
+                <!-- Slider Revolution CSS -->
+                <link href="/static/renata/rs-settings.css" rel="stylesheet">
+                <!--[if IE 8]>
+                <link rel="stylesheet" href="/static/renata/rs-settings-ie8.css">
+                <![endif]-->
+                <!-- Countdown Watch -->
+                <link href="/static/renata/jquery.countdown.css" rel="stylesheet">
+                <!-- Portfolio CSS -->
+                <link href="/static/renata/prettyPhoto.css" rel="stylesheet">
+                <!-- Font awesome CSS -->
+                <link href="/static/renata/font-awesome.min.css" rel="stylesheet">         
+                <!-- Custom CSS -->
+                <link href="/static/renata/style.css" rel="stylesheet">
+                <!--[if IE]>
+                <link rel="stylesheet" href="/static/renata/ie-style.css">
+                <![endif]-->
+                
+                <!-- Favicon -->
+                <link rel="shortcut icon" href="testimonials.html#">
+	{%endblock%}
 </head>
 
 <body>
 {% block page-content%}  
+<h2>学员就业</h2>
+        <hr>
 学生就业
+			<div class="col-md-4 col-sm-4">
+				<!-- testimonial content -->
+				<div class="testimonial-content t-one animated">
+					<!-- User's image , name and designation -->
+					<h4><img src="/static/renata/img/user-xs.jpg" alt="" class="img-responsive img-circle"/>H. Rackham<span>, Atr Director</span></h4>
+					<!-- User's comment -->
+					<blockquote class="br-orange">
+						<p>Sed ut perspiciatis unde omnis iste natust error sit vol accusantium doloremque and laudantium, totam rem aperiam, eaque an ipsa quae abe illo explicabo. An oiuk nesciunt.</p>
+					</blockquote>
+				</div>
+			</div>
+						<div class="col-md-4 col-sm-4">
+                                                        <!-- testimonial content -->
+                                                        <div class="testimonial-content t-two animated">
+                                                                <!-- User's image , name and designation -->
+                                                                <h4><img src="img/user-xs.jpg" alt="" class="img-responsive img-circle"/>Bum Malorum<span>, M. D.</span></h4>
+                                                                <!-- User's comment -->
+                                                                <blockquote class="br-lblue" style="background-color:orange">
+                                                                        <p>Sed ut perspiciatis unde omnis iste natust error sit vol accusantium doloremque and laudantium, totam rem aperiam, eaque an ipsa quae abe illo explicabo. An oiuk nesciunt.</p>
+                                                                </blockquote>
+                                                        </div>
+                                                </div>
+
+                <!-- Footer End -->
+
+                <!-- Javascript files -->
+                <!-- jQuery -->
+                <script src="/static/renata/js/jquery.js"></script>
+                <!-- Bootstrap JS -->
+                <script src="/static/renata/js/bootstrap.min.js"></script>
+                <!-- jQuery REVOLUTION Slider  -->
+                <script type="text/javascript" src="/static/renata/js/jquery.themepunch.plugins.min.js"></script>
+                <script type="text/javascript" src="/static/renata/js/jquery.themepunch.revolution.min.js"></script>
+                <!-- jQuery way points -->
+                <script src="/static/renata/js/waypoints.min.js"></script>
+                <!-- Jquery for Countdown Watch -->
+                <script type="text/javascript" src="/static/renata/js/jquery.countdown.min.js"></script>
+                <!-- Portfolio JS -->
+                <!-- Pretty Photo, Filter And Isotope JS -->
+                <script type="text/javascript" src="/static/renata/js/filter.js"></script>
+                <script type="text/javascript" src="/static/renata/js/isotope.js"></script>
+                <script type="text/javascript" src="/static/renata/js/jquery.prettyPhoto.js"></script>
+                <!-- Carusole JS -->
+                <script type="text/javascript" src="/static/renata/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+                <!-- Respond JS for IE8 -->
+                <script type="text/javascript" src="/static/renata/js/respond.min.js"></script>
+                <!-- HTML5 Support for IE -->
+                <script type="text/javascript" src="/static/renata/js/html5shiv.js"></script>
+                <!-- Custom JS -->
+                <script type="text/javascript" src="/static/renata/js/custom.js"></script>
+
 {% endblock %}
 </body>
 </html>

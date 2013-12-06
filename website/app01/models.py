@@ -24,6 +24,18 @@ class questions(models.Model):
 	question =  models.CharField(max_length=150, unique=True)
 	answer =  models.TextField()
 	display_order = models.IntegerField(default=1000)
+	def __unicode__(self):
+                return self.question
+class new_classes(models.Model):
+	class_name = models.CharField(max_length=100, unique=True)
+	number = models.CharField(max_length=30)
+	start_date = models.DateField()
+	course_term = models.CharField(max_length=30)
+	method =  models.CharField(max_length=30)
+	students = models.CharField(max_length=30)
+	limited = models.BooleanField(default=False,verbose_name='Seat limited')
+	def __unicode__(self):
+                return self.number
 '''
 class IP(models.Model):
     hostname=models.CharField(max_length=50, unique=True)

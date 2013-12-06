@@ -19,8 +19,10 @@ class WebUserAdmin(admin.ModelAdmin):
     pass
 class QuestionAdmin(admin.ModelAdmin):
 	list_display = ('question', 'display_order')
+class NewClassAdmin(admin.ModelAdmin):
+        list_display = ('class_name', 'number','start_date','method' )
 
-
+admin.site.register(new_classes,NewClassAdmin)
 admin.site.register(questions,QuestionAdmin)
 admin.site.register(news,NewsAdmin)
 admin.site.register(web_user,WebUserAdmin)
