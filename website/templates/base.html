@@ -56,16 +56,56 @@
 							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu</a>
 							<div class="nav-collapse collapse">
 								<ul class="nav">
+									{% ifequal tabname "homepage" %}
 									<li class="active"><a class="brand" href="/">首页</a></li>
+									{% else %}
+									<li><a class="brand" href="/">首页</a></li>
+									{% endifequal %}
+									{% ifequal tabname "about" %}
+									<li class="active"><a href="/about/">我们</a></li>
+									{% else %}
 									<li><a href="/about/">我们</a></li>
+									{% endifequal %}
+									{% ifequal tabname "courses" %}
+									<li class="active"><a href="/courses/">课程</a></li>
+									{% else %}
 									<li><a href="/courses/">课程</a></li>
+									{% endifequal %}
+									{% ifequal tabname "graduate" %}
+									<li class="active"><a href="/graduate/">就业</a></li>
+									{% else %}
 									<li><a href="/graduate/">就业</a></li>
+									{% endifequal %}
+									{% ifequal tabname "enroll" %}									
+									<li class="active"><a href="/enroll/">问答</a></li>
+									{% else %}
 									<li><a href="/enroll/">问答</a></li>
+									{% endifequal %}
+									{% ifequal tabname "onLineCourse" %}									
+									<li class="active"><a href="/onLineCourse/">在线试听</a></li>
+									{% else %}
 									<li><a href="/onLineCourse/">在线试听</a></li>
+									{% endifequal %}
+									{% ifequal tabname "newClass" %}									
+									<li class="active"><a href="/newClass/">最新开班</a></li>
+									{% else %}
 									<li><a href="/newClass/">最新开班</a></li>
+									{% endifequal %}
+									{% ifequal tabname "news" %}									
+									<li class="active"><a href="/news/">行业动态</a></li>
+									{% else %}
 									<li><a href="/news/">行业动态</a></li>
+									{% endifequal %}
+									{% ifequal tabname "校内BBS" %}									
+									<li class="active"><a href="/bbs/">校内BBS</a></li>
+									{% else %}
 									<li><a href="/bbs/">校内BBS</a></li>
+									{% endifequal %}
+									{% ifequal tabname "contact" %}									
+									<li class="active"><a href="/contact/">联系</a></li>
+									{% else %}
 									<li><a href="/contact/">联系</a></li>
+									{% endifequal %}
 									<li class="dropdown">
 										<a class="dropdown-toggle" data-toggle="dropdown" href="index.html#">More <b class="caret"></b></a>
 										<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
