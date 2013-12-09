@@ -6,14 +6,18 @@
 		<div class="span12">
 			<!--Portfolio Items-->
 			<ul class="thumbnails portfolio">
+			  {% for course in course_list %}
+			     {% if forloop.counter|divisibleby:5%}	
+				<div class="row"></div>
+			     {% endif%}
 				<li class="span3 cat-1">
 					<div class="thumbnail">
-						<a class="js-fancybox" rel="album" title="Fancybox Image Gallery" href="/static/assets/item-big.png"><img src="/static/assets/item-small.png" alt=""></a>
-						<h5>Linux中高级运维实战就业班</h5>
-						<p>Description</p>
+						<a class="js-fancybox" rel="album" title="Fancybox Image Gallery" target="blank" href="{{course.course_url}}"><img src="/static/assets/item-small.png" alt=""></a>
+						<h5>{{ course.course_name}}Linux中高级运维实战就业班</h5>
+						<p>{{ course.description}}Description</p>
 					</div>
 				</li>
-				<li class="span3 cat-2">
+				<!--li class="span3 cat-2">
 					<div class="thumbnail">
 						<a class="js-fancybox" rel="album" href="/static/assets/item-big.png"><img src="/static/assets/item-small.png" alt=""></a>
 						<h5>Linux高级运维架构师</h5>
@@ -33,7 +37,8 @@
 						<h5> C语言系统运维开发大师课程</h5>
 						<p>Description</p>
 					</div>
-				</li>
+				</li-->
+			{% endfor%}
 			</ul>
 		</div><!-- /.span12 -->
 	</div><!-- /.row -->

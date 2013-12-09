@@ -23,6 +23,10 @@ class NewClassAdmin(admin.ModelAdmin):
         list_display = ('class_name', 'number','start_date','method' )
 class GraduateAdmin(admin.ModelAdmin):
         list_display = ('student_name', 'title','company','color' )
+
+class onLineCourseAdmin(admin.ModelAdmin):
+        list_display = ('course_name', 'course_url','description' )
+admin.site.register(online_course,onLineCourseAdmin)
 admin.site.register(graduates,GraduateAdmin)
 admin.site.register(new_classes,NewClassAdmin)
 admin.site.register(questions,QuestionAdmin)

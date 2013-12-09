@@ -26,6 +26,12 @@ class questions(models.Model):
 	display_order = models.IntegerField(default=1000)
 	def __unicode__(self):
                 return self.question
+class online_course(models.Model):
+	course_name = models.CharField(max_length=100, unique=True)
+	description = models.CharField(max_length=100, unique=True)
+	course_url = models.URLField()
+	img_link = models.CharField(max_length=100, unique=True)
+	display_order = models.IntegerField(default=1000)
 class new_classes(models.Model):
 	class_name = models.CharField(max_length=100, unique=True)
 	number = models.CharField(max_length=30)

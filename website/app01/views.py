@@ -29,7 +29,8 @@ def newClass(request):
 	new_classes = models.new_classes.objects.all()
 	return render_to_response('newClass.html', {'new_classes': new_classes,'tabname':'newClass'})
 def onLineCourse(request):
-        return render_to_response('onLineCourse.html',{'tabname':'onLineCourse'})
+	course_list = models.online_course.objects.all()
+        return render_to_response('onLineCourse.html',{'course_list':course_list})
 def bbs(request):
         return render_to_response('bbs.html',{'tabname':'bbs'})
 def news(request):
