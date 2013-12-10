@@ -4,6 +4,13 @@
 <hr>
 	<div class="row">
 		<div class="span12">
+			<ul class="filter">
+				<li><span>Filter Items:</span></li>
+				<li><a class="active" href="#" data-filter="*">Show All</a></li>
+				{% for course_tag in tags_list %}		
+					<li><a href="#" data-filter="{{course_tag.tag}}">{{course_tag.tag}}</a></li>
+				{% endfor %}
+			</ul>
 			<!--Portfolio Items-->
 			<ul class="thumbnails portfolio">
 			  {% for course in course_list %}
