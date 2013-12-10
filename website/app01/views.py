@@ -12,7 +12,7 @@ def index(request):
 
 	return render_to_response('index.html',{'tabname':'homepage'})
 def about(request):
-	return render_to_response('about.html',{'tabname':'about'})
+	return render_to_response('about.html',{'tabname':'about','teacher_list':models.teachers.objects.all()})
 
 def courses(request):
 	return render_to_response('courses.html',{'tabname':'courses'})

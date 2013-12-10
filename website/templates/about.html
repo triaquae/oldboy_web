@@ -21,15 +21,16 @@
 			</div>
 		</div>
 		<h3>教学团队</h3>
+		{%for teacher in teacher_list%}
 		<div class="span3">
 			<img src="/static/assets/staff-1.jpg" alt="" class="img-circle">
 			<div class="staff">
-				<h5>老男孩</h5>
-				<span>创始人</span>
-				<span><i class="icon-envelope"></i>&nbsp;email@domain.com</span>
+				<h5>{{teacher.name}}</h5>
+				<span>{{teacher.title}}创始人｜Linux金牌讲师</span>
+				<span><i class="icon-weibo"></i>&nbsp;email@domain.com</span>
 			</div>
 			<div class="team-about">
-				<p>老男孩，资深Linux系统运维架构专家、高级运维总监。从事一线网站运维及系统架构管理近12年，
+				<p>{{teacher.introduction}}老男孩，资深Linux系统运维架构专家、高级运维总监。从事一线网站运维及系统架构管理近12年，
 				曾就职于若干大规模高并发访问量的行业门户网站，并为多家互联网公司做过技术顾问，
 				擅长大规模网站系统架构。并于2007年开办了国内首个Linux运维实战培训私塾式精英教育机构。
 				并将个人的网站运维架构及教育领域的经验成功应用到IT教育领域教学工作。累计受益学生千余人
@@ -48,11 +49,12 @@
 			</ul>
 			
 		</div>	
+		{%endfor%}
 		<div class="span3">
 			<img src="/static/assets/staff-2.jpg" alt="" class="img-circle">
 			<div class="staff">
 				<h5>Alex Li</h5>
-				<span>合伙人&主讲师</span>
+				<span>Python金牌讲师</span>
 				<span><i class="icon-envelope"></i>&nbsp;email@domain.com</span>
 			</div>
 			<div class="team-about">
@@ -72,4 +74,20 @@
 				<li class="pintrest"><a href="#">Pintrest</a></li>
 			</ul>			
 		</div>
+		<div class="span4 pull-right" >
+                	<div class="headline "><h4>加入我们</h4></div>
+
+			<!-- Large Notice -->
+			<div class="well">
+				<h2>求贤若渴</h2>
+				<p>老男孩教育正在快速发展，欢迎有志青年加入我们的激情创业团队！现急缺以下人才：
+					<ul>
+					<li>资深Linux运维讲师</li>
+					<li>资深市场推广人员</li>
+					<ul><br>
+				</p>
+				<button type="button" class="btn btn-primary">Apply Now!</button>
+			</div>
+
+        	</div>
 {% endblock %}

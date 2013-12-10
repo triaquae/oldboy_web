@@ -26,6 +26,13 @@ class questions(models.Model):
 	display_order = models.IntegerField(default=1000)
 	def __unicode__(self):
                 return self.question
+class teachers(models.Model):
+	name = models.CharField(max_length=20, unique=True)
+	title = models.CharField(max_length=30)
+	photo = models.CharField(max_length=150)
+	social_blog_name = models.CharField(max_length=30)
+	social_blog_url = models.URLField()
+	introduction = models.TextField()
 class online_course(models.Model):
 	course_name = models.CharField(max_length=100, unique=True)
 	description = models.CharField(max_length=100, unique=True)
