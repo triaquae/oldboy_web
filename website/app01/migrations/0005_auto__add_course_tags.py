@@ -16,13 +16,12 @@ class Migration(SchemaMigration):
         db.send_create_signal(u'app01', ['course_tags'])
 
         # Adding M2M table for field tag_name on 'online_course'
-        m2m_table_name = db.shorten_name(u'app01_online_course_tag_name')
-        db.create_table(m2m_table_name, (
+        db.create_table(u'app01_online_course_tag_name', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
             ('online_course', models.ForeignKey(orm[u'app01.online_course'], null=False)),
             ('course_tags', models.ForeignKey(orm[u'app01.course_tags'], null=False))
         ))
-        db.create_unique(m2m_table_name, ['online_course_id', 'course_tags_id'])
+        db.create_unique(u'app01_online_course_tag_name', ['online_course_id', 'course_tags_id'])
 
 
     def backwards(self, orm):
@@ -30,7 +29,7 @@ class Migration(SchemaMigration):
         db.delete_table(u'app01_course_tags')
 
         # Removing M2M table for field tag_name on 'online_course'
-        db.delete_table(db.shorten_name(u'app01_online_course_tag_name'))
+        db.delete_table('app01_online_course_tag_name')
 
 
     models = {

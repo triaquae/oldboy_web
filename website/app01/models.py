@@ -35,6 +35,8 @@ class teachers(models.Model):
 	introduction = models.TextField()
 class course_tags(models.Model):
 	tag = models.CharField(max_length=20, unique=True)
+	def __unicode__(self):
+                return self.tag
 class online_course(models.Model):
 	course_name = models.CharField(max_length=100, unique=True)
 	description = models.CharField(max_length=100, unique=True)

@@ -7,8 +7,8 @@
 			<ul class="filter">
 				<li><span>Filter Items:</span></li>
 				<li><a class="active" href="#" data-filter="*">Show All</a></li>
-				{% for course_tag in tags_list %}		
-					<li><a href="#" data-filter="{{course_tag.tag}}">{{course_tag.tag}}</a></li>
+				{% for course_tag in tag_list %}		
+					<li><a href="#" data-filter=".{{course_tag.tag}}">{{course_tag.tag}}</a></li>
 				{% endfor %}
 			</ul>
 			<!--Portfolio Items-->
@@ -17,24 +17,17 @@
 			     {% if forloop.counter|divisibleby:5%}	
 				<div class="row"></div>
 			     {% endif%}
-				<li class="span3 cat-1">
+				<li class="span3 {% for i in course.tag_name.values%}{{i.tag}}{%endfor%}">
 					<div class="thumbnail">
 						<a class="js-fancybox" rel="album" title="Fancybox Image Gallery" target="blank" href="{{course.course_url}}"><img src="/static/assets/item-small.png" alt=""></a>
-						<h5>{{ course.course_name}}Linux中高级运维实战就业班</h5>
-						<p class="{% for i in course.tag_name.values%}{{i.tag}}{%endfor%} ">{{ course.description}}Description   | {{course.tag_name.values_list|slice:'i'}}</p>
+						<h5>{{ course.course_name}}</h5>
+						<p>{{ course.description}} | {{course.tag_name.values_list|slice:'i'}}</p>
 					</div>
 				</li>
 				<!--li class="span3 cat-2">
 					<div class="thumbnail">
 						<a class="js-fancybox" rel="album" href="/static/assets/item-big.png"><img src="/static/assets/item-small.png" alt=""></a>
 						<h5>Linux高级运维架构师</h5>
-						<p>Description</p>
-					</div>
-				</li>
-				<li class="span3 cat-3">
-					<div class="thumbnail">
-						<a class="js-fancybox" rel="album" href="/static/assets/item-big.png"><img src="/static/assets/item-small.png" alt=""></a>
-						<h5>Python高级运维开发课程</h5>
 						<p>Description</p>
 					</div>
 				</li>

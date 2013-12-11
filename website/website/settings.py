@@ -1,8 +1,8 @@
 # Django settings for website project.
 #site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
-site_path ='/var/www/sites/oldboy_web/website'
 #site_path ='/var/www/sites/oldboy_web/website'
-#site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
+#site_path ='/var/www/sites/oldboy_web/website'
+site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
