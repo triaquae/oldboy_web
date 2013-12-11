@@ -24,9 +24,12 @@ class NewClassAdmin(admin.ModelAdmin):
 class GraduateAdmin(admin.ModelAdmin):
         list_display = ('student_name', 'title','company','color' )
 
+class CoursePlanAdmin(admin.ModelAdmin):
+	list_display = ('name','headers')
 class onLineCourseAdmin(admin.ModelAdmin):
         list_display = ('course_name', 'course_url','description' )
 
+admin.site.register(course_plan, CoursePlanAdmin)
 admin.site.register(course_tags)
 admin.site.register(teachers)
 admin.site.register(online_course,onLineCourseAdmin)

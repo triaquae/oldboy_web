@@ -26,6 +26,13 @@ class questions(models.Model):
 	display_order = models.IntegerField(default=1000)
 	def __unicode__(self):
                 return self.question
+class course_plan(models.Model):
+	name = models.CharField(max_length=50, unique=True)
+	headers = models.TextField(blank=True)
+	content = models.TextField()
+	display_order = models.IntegerField(default=1000)
+	def __unicode__(self):
+		return self.name
 class teachers(models.Model):
 	name = models.CharField(max_length=20, unique=True)
 	title = models.CharField(max_length=30)
@@ -60,7 +67,8 @@ class graduates(models.Model):
 	student_name = models.CharField(max_length=30, unique=True)
 	photo = models.CharField(max_length=100)
 	title = models.CharField(max_length=30)
-	company = models.CharField(max_length=50, unique=True)
+	company = models.CharField(max_length=50)
+	class_name = models.CharField(max_length=50)
 	comments = models.TextField()	
 	color_choice = (('br-orange','orange'), ('br-green', 'green'), ('br-blue','blue'),('br-red','red'),('br-lblue','light-blue'),('br-black',('black')))
         color = models.CharField(max_length=100, choices= color_choice)
