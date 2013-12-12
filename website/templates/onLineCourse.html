@@ -2,44 +2,33 @@
 {% block page-content %}
 <h3>在线试听课程</h3>
 <hr>
-	<div class="row">
-		<div class="span12">
-			<ul class="filter">
-				<li><span>Filter Items:</span></li>
-				<li><a class="active" href="#" data-filter="*">Show All</a></li>
-				{% for course_tag in tag_list %}		
-					<li><a href="#" data-filter=".{{course_tag.tag}}">{{course_tag.tag}}</a></li>
-				{% endfor %}
-			</ul>
-			<!--Portfolio Items-->
-			<ul class="thumbnails portfolio">
-			  {% for course in course_list %}
-			     {% if forloop.counter|divisibleby:5%}	
-				<div class="row"></div>
-			     {% endif%}
-				<li class="span3 {% for i in course.tag_name.values%}{{i.tag}}{%endfor%}">
-					<div class="thumbnail">
-						<a class="js-fancybox" rel="album" title="Fancybox Image Gallery" target="blank" href="{{course.course_url}}"><img src="/static/assets/item-small.png" alt=""></a>
-						<h5>{{ course.course_name}}</h5>
-						<p>{{ course.description}} | {{course.tag_name.values_list|slice:'i'}}</p>
-					</div>
-				</li>
-			   {%endfor%}
-				<!--li class="span3 cat-2">
-					<div class="thumbnail">
-						<a class="js-fancybox" rel="album" href="/static/assets/item-big.png"><img src="/static/assets/item-small.png" alt=""></a>
-						<h5>Linux高级运维架构师</h5>
-						<p>Description</p>
-					</div>
-				</li>
-				<li class="span3 cat-2">
-					<div class="thumbnail">
-						<a class="js-fancybox" rel="album" href="/static/assets/item-big.png"><img src="/static/assets/item-small.png" alt=""></a>
-						<h5> C语言系统运维开发大师课程</h5>
-						<p>Description</p>
-					</div>
-				</li-->
-			</ul>
-		</div><!-- /.span12 -->
-	</div><!-- /.row -->
+        <div class="row">
+                <div class="span12">
+                        <ul class="filter">
+                                <li><span>Filter Items:</span></li>
+                                <li><a class="active" href="#" data-filter="*">Show All</a></li>
+                                {% for course_tag in tag_list %}                
+                                        <li><a href="#" data-filter=".{{course_tag.tag}}">{{course_tag.tag}}</a></li>
+                                {% endfor %}
+                        </ul>
+                        <!--Portfolio Items-->
+                        <ul class="thumbnails portfolio isotope" style="position: relative; overflow: hidden; height: 828px;">
+                          {% for course in course_list %}
+                             {% if forloop.counter|divisibleby:5%}        
+                                <div class="row"></div>
+                             {% endif%}
+                                <li class="span3 {% for i in course.tag_name.values%}{{i.tag}}{%endfor%} isotope-item">
+                                        <div class="thumbnail">
+                                                <a class="js-fancybox" rel="album" title="Fancybox Image Gallery" target="blank" href="{{course.course_url}}"><img src="/static/assets/item-small.png" alt=""></a>
+                                                <h5>{{ course.course_name}}</h5>
+                                                <p>{{ course.description}} | {{course.tag_name.values_list|slice:'i'}}</p>
+                                        </div>
+                                </li>
+                           {%endfor%}
+                               
+                        </ul>
+                </div><!-- /.span12 -->
+        </div><!-- /.row -->
+<script src="/static/js/onLineCourse.js" type="text/javascript"></script>
 {% endblock %}
+		
