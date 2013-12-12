@@ -4,8 +4,8 @@ from django.contrib.auth.models import User as djangouser, Group as djangogroup
 from django.contrib.sites.models import Site as djangosite
 import logging.config, logging, logging.handlers
 
-admin.site.unregister(djangouser)
-admin.site.unregister(djangogroup)
+#admin.site.unregister(djangouser)
+#admin.site.unregister(djangogroup)
 admin.site.unregister(djangosite)
 
 from models import * 
@@ -30,6 +30,7 @@ class onLineCourseAdmin(admin.ModelAdmin):
         list_display = ('course_name', 'course_url','description' )
 
 admin.site.register(course_plan, CoursePlanAdmin)
+admin.site.register(class_list)
 admin.site.register(course_tags)
 admin.site.register(teachers)
 admin.site.register(online_course,onLineCourseAdmin)

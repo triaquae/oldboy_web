@@ -5,14 +5,15 @@ from django.contrib.auth.models import User
 # Create your models here.
 class web_user(models.Model):
     user = models.ForeignKey(User, null=True)
-    email = models.EmailField()
-    photo = models.CharField(max_length=100, blank=True)
+    email = models.EmailField()	
+    class_name = models.ForeignKey('class_list') 
+    photo =  models.CharField(max_length=100,default="user-1.jpg") 
     def __unicode__(self):
         return '%s' % self.user
 
 class news(models.Model):
 	headline = models.CharField(max_length=100, unique=True)
-	author = models.CharField(max_length=30)
+	author = models.ForeignKey(web_user) 
 	publish_date = models.DateTimeField()
 	news_choices = (('school_news','school news'), ('industry_news', 'industry news'), ('student_news','student news'))
         news_type = models.CharField(max_length=100, choices= news_choices)
@@ -72,6 +73,11 @@ class graduates(models.Model):
 	comments = models.TextField()	
 	color_choice = (('br-orange','orange'), ('br-green', 'green'), ('br-blue','blue'),('br-red','red'),('br-lblue','light-blue'),('br-black',('black')))
         color = models.CharField(max_length=100, choices= color_choice)
+
+class class_list(models.Model):
+	name = models.CharField(max_length=50, unique=True)
+	def __unicode__(self):
+                return self.name
 '''
 class IP(models.Model):
     hostname=models.CharField(max_length=50, unique=True)
