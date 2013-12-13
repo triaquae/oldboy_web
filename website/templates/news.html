@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load duoshuo_tags %}
+
 <html>
 
 <head>
@@ -60,9 +62,12 @@
 								&nbsp;&nbsp;&nbsp;<a id="{{news.id}}_comment" href="javascript:void(0);"  onclick="ShowComment(this)" ><i class="icon icon-comments"></i></a> 34 
 								&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" ><i class="icon icon-thumbs-up"></i></a> 2
 							</h4>
-							<form id="{{news.id}}_comment_id" method="post" action="/submitComment/">
+							<div id="{{news.id}}_comment_id">	
+							 {% duoshuo_comments %}
+							</div>
+							<!--form method="post" action="/submitComment/">
 								<textarea  style="width:90%"> dfsfsf</textarea><a class="btn btn-primary"  href="javascript:void(0);"  onclick="ShowAllNewsContent(this)" >评论</a>
-							</form>
+							</form-->
 						</div><!-- /end of post -->
 					</article><!-- /end of article -->
 					<script>  $("#news_{{ news.id }}").hide();

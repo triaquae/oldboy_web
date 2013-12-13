@@ -1,8 +1,8 @@
 # Django settings for website project.
-site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
+#site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
 #site_path ='/var/www/sites/oldboy_web/website'
 #site_path ='/var/www/sites/oldboy_web/website'
-#site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
+site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -18,7 +18,7 @@ DATABASES = {
         'NAME': 'oldboy_web',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'root',
-        'PASSWORD': 'root',
+        'PASSWORD': 'alex3714',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
@@ -131,8 +131,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
 	'app01',
+	'duoshuo',
 	'south',
 )
+DUOSHUO_SECRET = 'cc545d3fc4697e59f6f5296a55912b51' 
+DUOSHUO_SHORT_NAME = 'oldboy'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
