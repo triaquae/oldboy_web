@@ -1,32 +1,10 @@
 {% extends "base.html" %}
-<html>
-
-<head>
-		<meta charset="utf-8">
-		<title>Merovingio - Responsive Bootstrap Template</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="stylesheet" href="/static/css/bootstrap.css">
-		<link rel="stylesheet" href="/static/css/font-awesome.css">
-		<link rel="stylesheet" href="/static/css/theme.css">
-		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Patua+One'>
-		<!--[if lt IE 9]>
-			<link rel="stylesheet" href="css/font-awesome-ie7.css">
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link rel="shortcut icon" href="favicon.ico">
-</head>
-
-<body>
-{% block page-content%}
-	<h2>学员关心的问题</h2>
-	<hr>
-{%  for question in question_list%}
-	<h4>{{question.question}}</h4>
-	<pre style="background-color:#FFFF99">{{question.answer}}</pre>
-{% endfor %}
-
+	{% block page-content%}
+		<h2>学员关心的问题</h2>
+		<hr>
+	{%  for question in question_list%}
+		<h4>{{question.question}}</h4>
+		<pre style="background-color:#FFFF99">{{question.answer}}</pre>
+	{% endfor %}
 {% endblock%}
-</body>
-</html>
+

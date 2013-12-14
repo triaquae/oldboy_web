@@ -1,6 +1,4 @@
-alert("hiello");
 window.onload = function(){
-	alert("hhhhi");
 	var $container = $(".portfolio");
 	$container.isotope({
 		filter: "*",

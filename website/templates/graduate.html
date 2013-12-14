@@ -1,7 +1,4 @@
 {% extends "base.html" %}
-<html>
-
-<head>
 	{%block header%}
                 <!-- Styles -->
                 <!-- Bootstrap CSS -->
@@ -27,9 +24,6 @@
                 <!-- Favicon -->
                 <link rel="shortcut icon" href="testimonials.html#">
 	{%endblock%}
-</head>
-
-<body>
 {% block page-content %}  
 <h2>学员就业</h2>
         <hr>
@@ -59,14 +53,10 @@
 		{% endfor%}
 	{% endif%}
 		</div>
+	{% endblock %}	
                 <!-- Footer End -->
-
-                <!-- Javascript files -->
-                <!-- jQuery -->
-                <script src="/static/renata/js/jquery.js"></script>
-                <!-- Bootstrap JS -->
-                <script src="/static/renata/js/bootstrap.min.js"></script>
-                <!-- jQuery REVOLUTION Slider  -->
+               <!-- jQuery REVOLUTION Slider  -->
+			   	{% block OtherSources %}
                 <script type="text/javascript" src="/static/renata/js/jquery.themepunch.plugins.min.js"></script>
                 <script type="text/javascript" src="/static/renata/js/jquery.themepunch.revolution.min.js"></script>
                 <!-- jQuery way points -->
@@ -87,6 +77,4 @@
                 <!-- Custom JS -->
                 <script type="text/javascript" src="/static/renata/js/custom.js"></script>
 
-{% endblock %}
-</body>
-</html>
+	{% endblock %}

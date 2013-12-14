@@ -1,37 +1,32 @@
 {% extends 'base.html'%}
-<!DOCTYPE html>
-<html>
-	<body>
-
 {% block page-content%}
-		<div class="row">
-			<div class="span12">
-				<h2>最新开班信息</h2>
-				<hr>
+	<div class="row">
+		<div class="span12">
+			<h2>最新开班信息</h2>
+			<hr>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="span12">
+			<div class="well centered" style="background-color:orange">
+				<h3>专注IT运维领域11年 - 铸就中国精英Linux运维培训第一品牌</h3>
+				<p>所学的内容就是实际的项目，学习的过程就是做项目的过程。等同于积累了工作经验。
+				老男孩老师领衔的Linux, Python教学团队，是目前中国IT运维培训界首屈一指的教学团队，汇聚名师，方能成就精英.</p>
 			</div>
 		</div>
+	</div>
 
-		<div class="row">
-			<div class="span12">
-				<div class="well centered" style="background-color:orange">
-					<h3>专注IT运维领域11年 - 铸就中国精英Linux运维培训第一品牌</h3>
-					<p>所学的内容就是实际的项目，学习的过程就是做项目的过程。等同于积累了工作经验。
-老男孩老师领衔的Linux, Python教学团队，是目前中国IT运维培训界首屈一指的教学团队，汇聚名师，方能成就精英.</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
-		  {% if new_classes %}
-	   	     {% for c in new_classes%}
-
+	<div class="row">
+		{% if new_classes %}
+		{% for c in new_classes%}
 			<div class="span3">
 				<ul class="pricing-table">
-				    {% if c.limited %}
+					{% if c.limited %}
 					<div class="ribbon-wrapper">
-                                                <div class="ribbon">座位紧张</div>
-                                        </div>
-				     {%endif%}
+						<div class="ribbon">座位紧张</div>
+					</div>
+					{%endif%}
 					<li><h3>{{ c.class_name}}</h3></li>
 					<li>{{c.number}}</li>
 					<li style="font-size:15px;background-color:orange">开班日期: {{c.start_date}}</li>
@@ -41,10 +36,7 @@
 					<li class="footer"><a href="pricing.html#" class="btn btn-primary">立刻了解</a></li>
 				</ul>
 			</div>
-		    {%endfor%}
-		  {%endif%}
-		</div>
-
+		{%endfor%}
+		{%endif%}
+	</div>
 {% endblock%}
-	</body>
-</html>
