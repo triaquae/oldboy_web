@@ -31,6 +31,7 @@
 <div class="testimonial">
 	{% if student_list %}
 		{%for student in student_list%}
+		{{student.student_name}}
 		  {%   if forloop.counter|divisibleby:3%}
 			<div class="row">
 		  {% endif %}

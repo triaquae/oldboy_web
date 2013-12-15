@@ -1,3 +1,16 @@
+$(document).ready(function(){
+       $('[rel="tooltip"]').tooltip();
+
+                        // fancybox gallery
+                        $("a.js-fancybox").fancybox({
+                                'transitionIn'  :   'elastic',
+                                'transitionOut' :   'elastic',
+                                'speedIn'       :   600,
+                                'speedOut'      :   200,
+                                'overlayShow'   :   true
+                        });
+
+});
 window.onload = function(){
 	var $container = $(".portfolio");
 	$container.isotope({

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load duoshuo_tags %}
-
+{% load pagination_tags %}
 <html>
 
 <head>
@@ -41,6 +41,7 @@
                                 </ul>
                                 <div class="tab-content">
                                    <div class="tab-pane active" id="school_news">
+				   {% autopaginate school_news 2 %}
 				    {% for news in school_news %}
 					<!-- first article -->
 					<article class="row">
@@ -74,10 +75,12 @@
 						$("#{{ news.id }}_comment_id").hide();
 					 </script>
 				     {%endfor%} 
+				        <span align="center">{% paginate%}</span>
 
 				</div> <!--end school news-->
 
                                    <div class="tab-pane" id="student_news">
+				   {% autopaginate student_news 1 %}
                                     {% for news in student_news %}
                                         <!-- first article -->
                                         <article class="row">
@@ -92,7 +95,7 @@
                                                 </div><!-- end of post meta data-->
                                                 <!-- the post -->
                                                 <div class="span7">
-                                                        <h4><i class="icon  icon-bullhorn"></i> {{news.headline}} </h4>
+                                                        <h4><i class="icon icon-comment"></i> {{news.headline}} </h4>
                                                         <!--a href="blog-post.html"><img class="post-img" src="/static/assets/post-img-1.jpeg" alt=""></a-->
                                                         <pre id="news_{{ news.id }}" > {{news.content}}</pre>
                                                         <a class="btn btn-primary" id="{{news.id}}" href="javascript:void(0);"  onclick="ShowAllNewsContent(this)" >看一下&raquo;</a>
@@ -100,9 +103,10 @@
                                         </article><!-- /end of article -->
                                         <script>  $("#news_{{ news.id }}").hide(); </script>
                                      {%endfor%}
-
+				        <span align="center">{% paginate%}</span>
                                 </div> <!--end stduent news-->
                                    <div class="tab-pane" id="industry_news">
+				   {% autopaginate industry_news 1 %}
                                     {% for news in industry_news %}
                                         <!-- first article -->
                                         <article class="row">
@@ -125,7 +129,7 @@
                                         </article><!-- /end of article -->
                                         <script>  $("#news_{{ news.id }}").hide(); </script>
                                      {%endfor%}
-
+				        <span align="center">{% paginate%}</span>
                                 </div> <!--end industry news-->
 
 </div> <!--end tabs-left-->
@@ -170,7 +174,6 @@
                                 </div-->
                 </div><!-- .row -->
  
-
 {% endblock %}
 </body>
 </html>

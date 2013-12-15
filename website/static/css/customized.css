@@ -99,3 +99,15 @@
 
 .social-icons li:hover {opacity: 1;}
 
+#consulting{
+	background-color:#bd362e;
+	color:white;
+	right:0px;
+	top:280px;
+	padding:0px 10px;
+	font-size:15px;
+	z-index:1000;
+	height:30px;
+	line-height:30px;
+	font-weight:bold;
+}

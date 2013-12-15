@@ -34,14 +34,16 @@
 		</div>
 			
 		<div class="row">
+			{% for class in class_list%}
 			<div class="span3">
 				<div class="info-column">
 					<img class="img-rounded" src="/static/assets/team-1.jpg" alt="">
-					<h3>Linux中高级运维实战就业班</h3>
-					<p>掌握运维工程师日常工作中的大部分技能，毕业学员普遍薪资5-12K</p>
-					<a class="btn btn-primary" href="index.html#">详细 &raquo;</a>
+					<h3>{{class.headline}}</h3>
+					<p>{{class.brief}}</p>
+					<a class="btn btn-primary" href="/courses/">详细 &raquo;</a>
 				</div>
 			</div>
+			{% endfor%}
 			<div class="span3">
 				<div class="info-column">
 					<img class="img-rounded" src="/static/assets/team-2.jpg" alt="">
