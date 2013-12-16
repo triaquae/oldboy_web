@@ -46,9 +46,9 @@ def news(request):
 	news_list = models.news.objects.all()
 	print news_type_dict
         return render_to_response('news.html', {
-				  'school_news': models.news.objects.filter(news_type='school_news'), 
-				  'industry_news': models.news.objects.filter(news_type='industry_news'), 
-				  'student_news': models.news.objects.filter(news_type='student_news'), 
+				  'school_news': sorted(models.news.objects.filter(news_type='school_news')), 
+				  'industry_news':sorted( models.news.objects.filter(news_type='industry_news')), 
+				  'student_news': sorted(models.news.objects.filter(news_type='student_news')), 
 		'news_type_dict':news_type_dict, 'tabname':'news'},
 		context_instance=RequestContext(request))
 def contact(request):
