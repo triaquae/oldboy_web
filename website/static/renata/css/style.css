@@ -1116,7 +1116,7 @@ div.ppt {
 
 
 .testimonial .testimonial-content.t-one{
-	opacity: 0;
+	//opacity: 0;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     animation-delay: 0s;
     -webkit-animation-duration: 1s;

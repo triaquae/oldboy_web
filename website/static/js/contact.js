@@ -1,14 +1,11 @@
-﻿var mapObj, longititude = 116.29137,latitude = 40.14976;
+﻿var mapObj, longititude = 116.291424,latitude = 40.149607116;
 
 window.onload = function(){  
     mapObj = new AMap.Map("center_position",{  
 		center:new AMap.LngLat(longititude,latitude), 
-		level:14,
+		level:17,
     });   
 	
-	AMap.event.addListener(mapObj,'click',function(){  
-		window.open("http://www.amap.com");
-    });
 	if(mapObj)
 		openInfo();
 };  
@@ -22,5 +19,9 @@ function openInfo(){
     inforWindow = new AMap.InfoWindow({    
         content:info.join("<br/>")
     });   
-    inforWindow.open(mapObj,new AMap.LngLat(longititude,latitude));  
+    inforWindow.open(mapObj,new AMap.LngLat(longititude,latitude)); 
+
+    AMap.event.addListener(inforWindow,'click',function(){
+                window.open("http://www.amap.com");
+    }); 
 }  
