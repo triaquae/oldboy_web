@@ -19,13 +19,13 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			var div = $('#style-switcher');
 			console.log(div.css('right'));
-			if (div.css('right') === '-300px') {
+			if (div.css('right') === '-200px') {
 				$('#style-switcher').animate({
 					right: '0px'
 				}); 
 			} else {
 				$('#style-switcher').animate({
-					right: '-300px'
+					right: '-200px'
 				});
 			}
 		})
