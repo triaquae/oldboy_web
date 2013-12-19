@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 	
         // Style Switcher	
 		$('#style-switcher').animate({
-			right: '-300px'
+	//		right: '-300px'
 		});
 		
 		$('#style-switcher h2 a').click(function(e){
