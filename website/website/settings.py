@@ -1,7 +1,7 @@
 # Django settings for website project.
 #site_path ='/usr/local/src/OldBoyWebsites/oldboy_web/website'
-#site_path ='/var/www/sites/oldboy_web/website'
-site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
+site_path ='/var/www/sites/oldboy_web/website'
+#site_path ='/var/www/sites/demo.graphikaria.com/merovingio/website'
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -142,12 +142,12 @@ INSTALLED_APPS = (
      'django.contrib.admindocs',
 	'app01',
 	'duoshuo',
-	'south',
+	#'south',
 	'pagination',
+
 )
 DUOSHUO_SECRET = 'cc545d3fc4697e59f6f5296a55912b51' 
 DUOSHUO_SHORT_NAME = 'oldboy'
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

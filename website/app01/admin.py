@@ -25,7 +25,13 @@ class GraduateAdmin(admin.ModelAdmin):
         list_display = ('student_name', 'title','company','color' )
 
 class CoursePlanAdmin(admin.ModelAdmin):
-	list_display = ('name','headers')
+	list_display = ('name','headers','content')
+	class Media:
+		js = (
+		'/static/tinymce/js/tinymce/tinymce.min.js',
+		'/static/tinymce/js/tinymce/config.js',
+
+		)
 class onLineCourseAdmin(admin.ModelAdmin):
         list_display = ('course_name', 'course_url','description' )
 

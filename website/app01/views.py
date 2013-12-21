@@ -19,6 +19,11 @@ def courses(request):
 	course_plan_list = models.course_plan.objects.all()
 	return render_to_response('courses.html',{'tabname':'courses', 'course_plan_list': course_plan_list})
 
+
+def test(request):
+	text = models.course_plan.objects.all()[0].content
+	#return render_to_response('text.html', {'text': text})
+	return HttpResponse(text)
 def graduate(request):
 	student_list = models.graduates.objects.all()
         return render_to_response('graduate.html',{'student_list':student_list,'tabname':'graduate'})
