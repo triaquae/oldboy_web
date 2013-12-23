@@ -48,6 +48,10 @@ window.onload = function(){
 		$optionSet.find('.active').removeClass('active');
 		$this.addClass('active');
 	});
-
+	$(".portfolio a").click(function(){
+		var url = $(this).attr("data-url");
+		window.open(url);
+		event.preventDefault();
+	});
 };
 	
