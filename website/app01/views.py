@@ -57,6 +57,5 @@ def news(request):
 		'news_type_dict':news_type_dict, 'tabname':'news'},
 		context_instance=RequestContext(request))
 def contact(request):
-        return render_to_response('contact.html',{'tabname':'contact'})
-
+	return render_to_response('contact.html',{'tabname':'contact'})
 

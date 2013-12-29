@@ -1,7 +1,23 @@
-{% extends 'base.html' %}
+<html>
+	<head>
+	</head>
+	<body>
+		<div>
+               		<img src="/static/assets/404.png"  usemap="#NFMap" border ="0" alt="cannot find the page" width="477" height="384" id="nfimg"/>
+			<map name="nfmap" id="NFMap">
+			  <area shape="rect" coords="185,305,325,340" href ="/" alt="Sun" /> 
 
-<h1>Page not found</h1>
-
-<p>Sorry, but the requested page could not be found.</p>
-
-
+			</map>
+		</div>
+	</body>
+	<script>
+		window.onload = function(){
+			var ele = document.getElementById("nfimg");
+			var width = ele.width,height = ele.height;
+			var left = (window.screen.availWidth- width)/2,toppx= (window.screen.avaiHeight = height)/2;
+			ele.style.marginTop = toppx;
+			ele.style.marginLeft = left;
+			
+	};
+	</script>
+</html>

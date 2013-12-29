@@ -75,7 +75,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'%s/static' % site_path , 
+        '%s/static' % site_path , 
 )
 
 # List of finder classes that know how to find static files in
@@ -104,7 +104,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-	'pagination.middleware.PaginationMiddleware',
+        'pagination.middleware.PaginationMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -126,7 +126,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'%s/templates' % site_path, 
+        '%s/templates' % site_path, 
 )
 
 INSTALLED_APPS = (
@@ -140,10 +140,10 @@ INSTALLED_APPS = (
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
-	'app01',
-	'duoshuo',
-	#'south',
-	'pagination',
+        'app01',
+        'duoshuo',
+        #'south',
+        'pagination',
 
 )
 DUOSHUO_SECRET = 'cc545d3fc4697e59f6f5296a55912b51' 

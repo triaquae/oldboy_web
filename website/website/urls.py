@@ -25,5 +25,14 @@ urlpatterns = patterns('',
 	(r'^news/$', news),
 	(r'^contact/$', contact),
 	(r'^text/$', test),
+
 #	url(r'^tinymce/', include('tinymce.urls')),   # for rich text 
 )
+import website.settings 
+if website.settings.DEBUG is False:
+    urlpatterns += patterns('',
+ 	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': 
+		website.settings.STATIC_ROOT,
+            }),
+    )
+
