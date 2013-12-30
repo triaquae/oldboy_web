@@ -25,6 +25,7 @@ urlpatterns = patterns('',
 	(r'^news/$', news),
 	(r'^contact/$', contact),
 	(r'^text/$', test),
+	(r'^courseDesc/$', courseDesc),
 
 #	url(r'^tinymce/', include('tinymce.urls')),   # for rich text 
 )

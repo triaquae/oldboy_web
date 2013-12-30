@@ -10,14 +10,29 @@ import datetime,os,json,time
 
 
 def index(request):
-	class_list = models.class_brief.objects.all()
+	class_list = models.course_plan.objects.all()
 	return render_to_response('index.html',{'tabname':'homepage', 'class_list': class_list})
+def courseDesc(request):
+	courseId = request.POST['name']
+	getType = request.POST['type']
+	if getType == 'brief':
+		text = models.course_plan.objects.get(id= courseId).brief
+	elif getType == 'header':
+		text = models.course_plan.objects.get(id= courseId).headers
+	else:
+		text = models.course_plan.objects.get(id= courseId).content
+	return HttpResponse(text)
 def about(request):
 	return render_to_response('about.html',{'tabname':'about','teacher_list':models.teachers.objects.all()})
 
 def courses(request):
+	try:	
+		activeid = int(request.GET['id'])
+	except KeyError:
+		activeid = 1
 	course_plan_list = models.course_plan.objects.all()
-	return render_to_response('courses.html',{'tabname':'courses', 'course_plan_list': course_plan_list})
+	print activeid
+	return render_to_response('courses.html',{'tabname':'courses', 'course_plan_list': course_plan_list,'activeid':activeid})
 
 
 def test(request):

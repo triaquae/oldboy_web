@@ -6,7 +6,7 @@
 			
 				<ul class="nav nav-tabs">
 				  {% for course in course_plan_list %}
-					{% ifequal course.id 1 %}
+					{% ifequal course.id  activeid %}
 						<li class="active"><a href="#course_{{course.id}}" data-toggle="tab">{{course.name}}</a></li>
 					{%else%}
 						<li><a href="#course_{{course.id}}" data-toggle="tab">{{course.name}}</a></li>
@@ -21,23 +21,19 @@
 				</ul>
 				<div class="tab-content">
 				  {% for course in course_plan_list%}
-			              {% ifequal course.id 1 %}
+			              {% ifequal course.id  activeid %}
 					<div class="tab-pane active" id="course_{{course.id}}">
 				      {%else%}
 					<div class="tab-pane" id="course_{{course.id}}">
 				      {%endifequal%}
-					  {%if course.headers%}
-					     {{course.headers}}
-					  {%endif%}
-					  {{ course.content}}
+					   <div id='header_{{course.id }}'> </div>
+					   <div id='content_{{course.id }}'> </div>
+					  <script>
+					     $("#header_{{course.id}}").load('/courseDesc/',{'name':'{{ course.id}}', 'type':'header'});
+					     $("#content_{{course.id}}").load('/courseDesc/',{'name':'{{ course.id}}', 'type':'content'});
+					  </script>
 					</div>
 				  {% endfor %}
-					<!--div class="tab-pane" id="course_2">
-					  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-					</div>
-					<div class="tab-pane" id="course_4">
-					  <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
-					</div-->
 			     </div> <!--end tab-content-->
 			</div>
 {% endblock %}

@@ -11,12 +11,6 @@ class web_user(models.Model):
     def __unicode__(self):
         return '%s' % self.user
 
-class class_brief(models.Model):
-	headline = models.CharField(max_length=100, unique=True)
-	brief = models.TextField()
-	img_link = models.CharField(max_length=100, unique=True)
-	def __unicode__(self):
-		return self.headline	
 class news(models.Model):
 	headline = models.CharField(max_length=100, unique=True)
 	author = models.ForeignKey(web_user) 
@@ -35,6 +29,8 @@ class questions(models.Model):
                 return self.question
 class course_plan(models.Model):
 	name = models.CharField(max_length=50, unique=True)
+        brief = models.TextField()
+        img_link = models.CharField(max_length=100, unique=True)
 	headers = models.TextField(blank=True)
 	content = models.TextField()
 	display_order = models.IntegerField(default=1000)

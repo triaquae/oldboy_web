@@ -38,7 +38,6 @@ class onLineCourseAdmin(admin.ModelAdmin):
 class ClassBriefAdmin(admin.ModelAdmin):
 	list_display = ('headline', 'brief', 'img_link')
 
-admin.site.register(class_brief,ClassBriefAdmin)
 admin.site.register(course_plan, CoursePlanAdmin)
 admin.site.register(class_list)
 admin.site.register(course_tags)
