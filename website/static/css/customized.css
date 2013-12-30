@@ -125,7 +125,7 @@
 		width:200px;
 		position:fixed;
 		right:-200px;
-		z-index:9999;
+		z-index:10001;
                 top: 80px;
 		border-radius: 0 0 10px 10px;
                 margin-top:0px;

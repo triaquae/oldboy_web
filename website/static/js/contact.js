@@ -1,6 +1,7 @@
 ﻿var mapObj, longititude = 116.291424,latitude = 40.149607116;
 
 window.onload = function(){  
+try{
     mapObj = new AMap.Map("center_position",{  
 		center:new AMap.LngLat(longititude,latitude), 
 		level:17,
@@ -8,6 +9,10 @@ window.onload = function(){
 	
 	if(mapObj)
 		openInfo();
+}catch(ex){
+	$("#center_position").html("<img src='/static/assets/map.png' >");
+	console.log("mmap can not be loaded cu");
+}
 };  
 function openInfo(){  
     var info = [];   
