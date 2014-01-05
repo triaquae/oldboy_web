@@ -1,16 +1,15 @@
 .imgtext{
 	position: absolute;
-	top: 40%;
+	top: 36%;
 	left: 50px;
-	width: 80%;	
+	padding:0px 10px;
+	width: 90%;	
 	min-height: 40px;
-	font-size: 50px;
-	font-weight: 100;
-	line-height: 30px;
+	font-size: 45px;
+	font-weight: 90;
+	line-height: 45px;
 	color: #ffffff;
 	text-align: center;
-	//opacity: 0.333;
-	filter: alpha(opacity=30);
 }
 .thumbnail>img {
 	display: block;
