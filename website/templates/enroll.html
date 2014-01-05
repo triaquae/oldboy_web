@@ -3,7 +3,7 @@
 		<h2>学员关心的问题</h2>
 		<hr>
 	{%  for question in question_list%}
-		<h4>{{question.question}}</h4>
+		<h4>问：{{question.question}}</h4>
 		<pre style="background-color:#FFFF99">{{question.answer}}</pre>
 	{% endfor %}
 {% endblock%}

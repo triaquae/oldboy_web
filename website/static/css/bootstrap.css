@@ -2583,7 +2583,10 @@ input[type="submit"].btn.btn-mini {
   -moz-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
   font-size:20px;
-  font-weight:bold;
+  font-weight:boldi;
+  background: #6b8e23;
+  color: white;
+  margin-top: 10px;
 }
 .nav-tabs > li > a:hover {
   border-color: #eeeeee #eeeeee #dddddd;
