@@ -159,7 +159,9 @@
 		padding: 0;
 		font-size: 14px;
 	}
-	
+	#style-switcher a{
+		color:#666;
+	}	
 	.colors { list-style:none; margin:0px 0px 10px 0px; overflow: hidden}
 	.colors li { float:left; margin:2px; }
 	.colors li a { display: block; width:15px; height:15px; cursor: pointer;
