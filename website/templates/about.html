@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block page-content %}
-		<div class="row">
+<!--		<div class="row">
 			<div class="span12">
 				<h2>老男孩Linux培训</h2>
 				<hr>
 			</div>
 		</div>
-
+-->
 		<div class="row">
 			<div class="span12">
 				<h3>成长故事</h3>
@@ -20,7 +20,8 @@
 				</p>
 			</div>
 		</div>
-		<h3>教学团队</h3>
+		<div class="row">
+                	<div class="span12"><h3>教学团队</h3></div>
 		{%for teacher in teacher_list%}
 		<div class="span3">
 			<img src="/static/assets/staff-1.jpg" alt="" class="img-circle">
@@ -48,20 +49,13 @@
 			
 		</div>	
 		{%endfor%}
-		<div class="span4 pull-right" >
-                	<div class="headline "><h4>加入我们</h4></div>
-
-			<!-- Large Notice -->
-			<div class="well">
-				<h2>求贤若渴</h2>
-				<p>老男孩教育正在快速发展，欢迎有志青年加入我们的激情创业团队！现急缺以下人才：
-					<ul>
-					<li>资深Linux运维讲师</li>
-					<li>资深市场推广人员</li>
-					<ul><br>
-				</p>
-				<button type="button" class="btn btn-primary">现在申请</button>
-			</div>
-
+		</div> <!-- end of row for teacher list -->
+		<div class="row" >
+			<div class="span12 well" style="padding:0;">
+				<img src="/static/assets/recruit.png" alt="招聘" style="margin-right:20px" >
+				<span style="font-size:24px;">老男孩教育正在飞速成长中，热烈欢迎志趣相投的青年加入我们的激情创业团队。</span>
+				<button type="button" class="btn btn-primary">现在申请吧</button>
+			</span>
         	</div>
+	</div>
 {% endblock %}

@@ -2,9 +2,24 @@
 	{% block page-content%}
 		<h2>学员关心的问题</h2>
 		<hr>
-	{%  for question in question_list%}
-		<h4>问：{{question.question}}</h4>
-		<pre style="background-color:#FFFF99">{{question.answer}}</pre>
+	
+	<div class="panel-group" id="accordion">
+        {%  for question in question_list%}	
+		<div class="panel panel-default">
+    		    <div class="panel-heading">
+			<h4 class="panel-title">
+        		   <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+				<h4>问：{{question.question}}</h4>
+			   </a>
+			</h4>
+		    </div>
+		    <div id="collapseOne" class="panel-collapse collapse in">
+      			<div class="panel-body">		
+			   <pre style="background-color:#FFFF99">{{question.answer}}</pre>
+			</div>
+	            </div>
+		</div>
 	{% endfor %}
+	</div>
 {% endblock%}
 
