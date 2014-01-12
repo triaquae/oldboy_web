@@ -227,3 +227,45 @@
 	
 	@media only screen and (max-width: 1029px) {#style-switcher {display: none;}}
 /* ==================== end of Styles Switcher ======================== */
+.courses_ul {
+	background-color:#f7f5fa;
+	  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  width:210px;
+}
+.tabs-left > .nav-tabs > li{
+  float: none;
+}
+.tabs-left > .nav-tabs > li > a{
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+  border:none;
+  font-weight:normal;
+}
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  font-size:15px;
+  background: transparent;
+}
+.tabs-left > .nav-tabs > li > a:hover {
+  border-color: transparent;
+}
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover {
+  border-color:transparent;
+  *border-right-color: #ffffff;
+  background-color:#e2e0e2;
+ border:none;
+  color:#333;
+ font-weight:bold;
+}	

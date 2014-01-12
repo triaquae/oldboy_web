@@ -2,20 +2,14 @@
 {% block page-content %}
 <h2>老男孩课程设置</h2>
 <hr>
-			<div class="tabbable tabs-left"> <!-- Only required for left/right tabs -->
-				<script>
-					function showicon(ele){
-						$("i").hide();
-						var elem = $(ele).children();
-						elem.show();					
-					}
-				</script>	
-				<ul class="nav nav-tabs courses_ul">
+			<div class="tabbable tabs-left courses_li"> <!-- Only required for left/right tabs -->
+			
+				<ul class="nav nav-tabs">
 				  {% for course in course_plan_list %}
 					{% ifequal course.id  activeid %}
-						<li class="active"><a href="#course_{{course.id}}" onclick ="showicon(this);"data-toggle="tab" class="courses_li_a">{{course.name}}<i class="icon-circle-arrow-right" style="float:right"></i></a></li>
+						<li class="active"><a href="#course_{{course.id}}" data-toggle="tab">{{course.name}}</a></li>
 					{%else%}
-						<li class="courses_li"><a href="#course_{{course.id}}" onclick ="showicon(this);" data-toggle="tab" class="courses_li_a">{{course.name}}<i class="icon-circle-arrow-right" style="float:right;display:none"></i></a></li>
+						<li class="courses_li"><a href="#course_{{course.id}}" data-toggle="tab">{{course.name}}</a></li>
 					{%endifequal%}
 				  {%endfor%}
 					<!--li><a href="#course_2" data-toggle="tab">
@@ -41,6 +35,5 @@
 					</div>
 				  {% endfor %}
 			     </div> <!--end tab-content-->
-				
 			</div>
 {% endblock %}
