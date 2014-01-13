@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block page-content%}  
+
+	<div class="row">
+		<div class="span12">
+			<h2>联系我们</h2>
+			<hr>
+		</div>
+	</div>
+
+<!--	<div class="row">
+		<div class="span12">
+			<h3>See what’s what.</h3>
+			<p>We here at Merovingio have proven we know that it is better to brand ultra-seamlessly than to aggregate efficiently. We will generate the ability of all-hands meetings to incentivize. What do we deliver? Anything and everything, regardless of standing! Our technology takes the best features of Python and OWL. Your budget for productizing should be at least one-third of your 	budget for reintermediating.</p>
+		</div>
+	</div>
+-->	<div class="row">
+		<div class="span4">
+			<h3>中心地址</h3>
+			<div id="center_position" style="width:380px;height:318px"></div>
+		</div>
+		<div class="span4">
+			<h3>联系方式</h3>
+			<div class="well">
+					<p><strong>学校地址:</strong></p>
+					<hr>
+					<p>
+							北京市昌平区沙河青年创业大厦15层 <br>
+							 <br>
+							报名电话：010-60747396 （工作时间）<br>
+									  18911718229  18600338340(8：00-22：00）<br>
+									QQ: 70271111  1986787350
+					</p>
+					<hr>
+					<p>周边交通：地铁站：昌平线沙河站B口；公交线路：670路、专51路、昌52、昌66等</p>
+			</div>
+		</div>
+		<div class="span4">
+			<h3>留言</h3>
+			<form class="form">
+					<label for="name">姓名:</label>
+					<input class="span4" type="text" id="name" placeholder="">
+
+					<label for="inputEmail">邮箱:</label>
+					<input class="span4" type="text" id="inputEmail" placeholder="">
+
+					<label for="message">留言内容:</label>
+					<textarea class="span4" rows="4" id="message" placeholder=""></textarea>
+
+					<label class="checkbox">
+							<input type="checkbox"> 抄送自己
+					</label>
+					<button type="submit" class="btn btn-primary">提交</button>
+			</form>
+		</div>
+	</div><!-- /.row -->
+
+	<div class="row">
+		<div class="span12">
+			<h3><span>Privacy Policy</span></h3>
+			<div class="alert centered">
+					<strong>Our privacy policy</strong>
+					Our website does not share personal information of any kind with anyone. We will not sell or rent your name or personal information to any third party. We DO NOT sell, rent or provide outside access to our mailing list or any data we store. Any data that a user stores via our facilities is wholly owned by that user or business. At any time a user or business is free to take their data and leave, or to simply delete their data from our facilities.
+					Our website only collects such personal information that is necessary for you to access and use our services. This personal information includes, but is not limited to, first and last name, physical address, zip code, email address, phone number, social security number, birth date, credit card information, financial information, and other personal information necessary to generate proper legal documents.
+			</div>
+		</div>
+	</div>
+	<script src="http://webapi.amap.com/maps?v=1.2&key=708119d02af5b460ff9f15efc30d0f54" type="text/javascript"></script>      
+    <script src="/static/js/contact.js" type="text/javascript"></script>
+{% endblock %}

@@ -73,4 +73,13 @@ def news(request):
 		context_instance=RequestContext(request))
 def contact(request):
 	return render_to_response('contact.html',{'tabname':'contact'})
-
+def signupclass(request):
+	class_name = request.POST['className']
+	student_Name = request.POST['name']
+	educa = request.POST['education']
+	phonenum = request.POST['phoneNum']
+        text = "ok"
+	print "classname %s" % class_name
+#	p = models.signup_info(name=student_Name,phone=phonenum,education=educa,classname=class_name)
+#	p.save() 
+	return HttpResponse(text)

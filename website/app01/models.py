@@ -80,6 +80,13 @@ class class_list(models.Model):
 	name = models.CharField(max_length=50, unique=True)
 	def __unicode__(self):
                 return self.name
+
+class signup_info(models.Model):
+	name = models.CharField(max_length=50)
+	phone = models.CharField(max_length=20)
+	eudcation = models.CharField(max_length=50)
+	classname = models.ManyToManyField(new_classes) 
+	
 '''
 class IP(models.Model):
     hostname=models.CharField(max_length=50, unique=True)

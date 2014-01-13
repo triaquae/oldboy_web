@@ -17,22 +17,9 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		function commitSignup(){
-			$('.warntip').remove();
-			var name = $("#signname").val(),educa = $("#education").val(),phone=$("#signPhoneNum").val(),classn = $("#signClassName").val();
-			if(name == "" || phone ==""){
-				$("#modal-container-4393").append("<p class='warntip'>请填写完整再提交</p>");
-				return;
-			}
-			var data = {"name":name,"education":educa,"phoneNum":phone,"className":classn};
-				
-			 $.post('/signupclass/',data,function(data) {
-                			if(data == "ok")
-						alert("报名成功");
-					else
-						alert("报名失败，请选择在线咨询或电话咨询");
-			});
-			$("#modal-container-4393").modal("hide");
+		function popEnrollDiag(){
+
+
 		}
 	</script>
 	<div class="row">
@@ -71,29 +58,25 @@
 					</h3>
 				</div>
 				<div class="modal-body">
+			              <form class="form">
                                         <label for="name"><span class="redstar">*</span> 姓名:</label>
-                                        <input class="span4" type="text" id="signname" style="width:90%" placeholder="">
+                                        <input class="span4" type="text" id="name" style="width:90%" placeholder="">
 					
-					<label for="name">学历:</label>
-                                        <select class="span4" id="education" style="width:90%" >
-						<option>高中及以下</option>
-						<option>大学及以上</option>
+					<label for="name">性别:</label>
+                                        <select class="span4" id="sex" style="width:90%" >
+						<option>男</option>
+						<option>女</option>
 					</select>
 
                                         <label for="inputPhoneNum"><span class="redstar">*</span> 电话:</label>
-                                        <input class="span4" type="text" id="signPhoneNum" style="width:90%" placeholder="">
-                                        <label for="message"><span class="redstar">*</span> 课程名称:</label>
-					<select class="span4" id="signClassName" style="width:90%" >
-					{% if new_classes %}
-			                {% for c in new_classes%}
-						<option>{{c.class_name}}</option>
-					{%endfor%}
-                			{%endif%}					
-					</select>
-		
+                                        <input class="span4" type="text" id="inputPhoneNum" style="width:90%" placeholder="">
+                                        <label for="message"><span class="redstar">*</span> 备注<span class="comment">(请注明要报名的课程及时间)</span>:</label>
+                                        <textarea class="span4" rows="4" id="message" style="width:90%" placeholder=""></textarea>
+                                       
+                        		</form>
 				</div>
 				<div class="modal-footer">
-					 <button class="btn btn-primary"  onclick="commitSignup()">提交</button> 
+					 <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">提交</button> 
 				</div>
 			</div>
 		</div>

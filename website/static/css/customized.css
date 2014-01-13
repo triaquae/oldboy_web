@@ -268,4 +268,21 @@
  border:none;
   color:#333;
  font-weight:bold;
-}	
+}
+
+/**modal diaglogue **/
+.redstar {
+	color:red;
+}
+.comment{
+	font-size:80%;
+}
+form .span4_1{
+	width:90%;
+}
+.warntip{
+	color:red;
+	width:100%;
+	text-align:center;
+}
+
