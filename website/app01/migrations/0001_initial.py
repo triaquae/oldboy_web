@@ -42,7 +42,7 @@ class Migration(SchemaMigration):
         db.create_table(u'app01_course_plan', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=50)),
-            ('brief', self.gf('django.db.models.fields.TextField')()),
+            ('brief', self.gf('django.db.models.fields.CharField')(max_length=150)),
             ('img_link', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
             ('headers', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('content', self.gf('django.db.models.fields.TextField')()),
@@ -129,6 +129,7 @@ class Migration(SchemaMigration):
             ('phone', self.gf('django.db.models.fields.CharField')(max_length=20)),
             ('eudcation', self.gf('django.db.models.fields.CharField')(max_length=50)),
             ('classname', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['app01.new_classes'])),
+            ('message', self.gf('django.db.models.fields.CharField')(max_length=200)),
         ))
         db.send_create_signal(u'app01', ['signup_info'])
 
@@ -179,7 +180,7 @@ class Migration(SchemaMigration):
         },
         u'app01.course_plan': {
             'Meta': {'object_name': 'course_plan'},
-            'brief': ('django.db.models.fields.TextField', [], {}),
+            'brief': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'content': ('django.db.models.fields.TextField', [], {}),
             'display_order': ('django.db.models.fields.IntegerField', [], {'default': '1000'}),
             'headers': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
@@ -245,6 +246,7 @@ class Migration(SchemaMigration):
             'classname': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['app01.new_classes']"}),
             'eudcation': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'message': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
             'phone': ('django.db.models.fields.CharField', [], {'max_length': '20'})
         },

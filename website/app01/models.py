@@ -86,7 +86,7 @@ class signup_info(models.Model):
 	phone = models.CharField(max_length=20)
 	eudcation = models.CharField(max_length=50)
 	classname = models.ForeignKey(new_classes) 
-	
+	message = models.CharField(max_length=200)	
 '''
 class IP(models.Model):
     hostname=models.CharField(max_length=50, unique=True)
