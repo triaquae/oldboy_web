@@ -63,7 +63,7 @@ class new_classes(models.Model):
 	students = models.CharField(max_length=30)
 	limited = models.BooleanField(default=False,verbose_name='Seat limited')
 	def __unicode__(self):
-                return self.number
+                return self.class_name
 
 
 class graduates(models.Model):
@@ -85,7 +85,7 @@ class signup_info(models.Model):
 	name = models.CharField(max_length=50)
 	phone = models.CharField(max_length=20)
 	eudcation = models.CharField(max_length=50)
-	classname = models.ManyToManyField(new_classes) 
+	classname = models.ForeignKey(new_classes) 
 	
 '''
 class IP(models.Model):

@@ -42,6 +42,8 @@ class Migration(SchemaMigration):
         db.create_table(u'app01_course_plan', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=50)),
+            ('brief', self.gf('django.db.models.fields.TextField')()),
+            ('img_link', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
             ('headers', self.gf('django.db.models.fields.TextField')(blank=True)),
             ('content', self.gf('django.db.models.fields.TextField')()),
             ('display_order', self.gf('django.db.models.fields.IntegerField')(default=1000)),
@@ -73,7 +75,7 @@ class Migration(SchemaMigration):
             ('course_name', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
             ('description', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
             ('course_url', self.gf('django.db.models.fields.URLField')(max_length=200)),
-            ('img_link', self.gf('django.db.models.fields.CharField')(unique=True, max_length=100)),
+            ('img_link', self.gf('django.db.models.fields.CharField')(default='linux_logo.png', max_length=100)),
             ('display_order', self.gf('django.db.models.fields.IntegerField')(default=1000)),
         ))
         db.send_create_signal(u'app01', ['online_course'])
@@ -120,6 +122,16 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'app01', ['class_list'])
 
+        # Adding model 'signup_info'
+        db.create_table(u'app01_signup_info', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
+            ('phone', self.gf('django.db.models.fields.CharField')(max_length=20)),
+            ('eudcation', self.gf('django.db.models.fields.CharField')(max_length=50)),
+            ('classname', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['app01.new_classes'])),
+        ))
+        db.send_create_signal(u'app01', ['signup_info'])
+
 
     def backwards(self, orm):
         # Deleting model 'web_user'
@@ -155,6 +167,9 @@ class Migration(SchemaMigration):
         # Deleting model 'class_list'
         db.delete_table(u'app01_class_list')
 
+        # Deleting model 'signup_info'
+        db.delete_table(u'app01_signup_info')
+
 
     models = {
         u'app01.class_list': {
@@ -164,10 +179,12 @@ class Migration(SchemaMigration):
         },
         u'app01.course_plan': {
             'Meta': {'object_name': 'course_plan'},
+            'brief': ('django.db.models.fields.TextField', [], {}),
             'content': ('django.db.models.fields.TextField', [], {}),
             'display_order': ('django.db.models.fields.IntegerField', [], {'default': '1000'}),
             'headers': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'img_link': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
             'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '50'})
         },
         u'app01.course_tags': {
@@ -213,7 +230,7 @@ class Migration(SchemaMigration):
             'description': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
             'display_order': ('django.db.models.fields.IntegerField', [], {'default': '1000'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'img_link': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'}),
+            'img_link': ('django.db.models.fields.CharField', [], {'default': "'linux_logo.png'", 'max_length': '100'}),
             'tag_name': ('django.db.models.fields.related.ManyToManyField', [], {'to': u"orm['app01.course_tags']", 'symmetrical': 'False'})
         },
         u'app01.questions': {
@@ -222,6 +239,14 @@ class Migration(SchemaMigration):
             'display_order': ('django.db.models.fields.IntegerField', [], {'default': '1000'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'question': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '150'})
+        },
+        u'app01.signup_info': {
+            'Meta': {'object_name': 'signup_info'},
+            'classname': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['app01.new_classes']"}),
+            'eudcation': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
+            'phone': ('django.db.models.fields.CharField', [], {'max_length': '20'})
         },
         u'app01.teachers': {
             'Meta': {'object_name': 'teachers'},

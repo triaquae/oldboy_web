@@ -79,7 +79,8 @@ def signupclass(request):
 	educa = request.POST['education']
 	phonenum = request.POST['phoneNum']
         text = "ok"
-	print "classname %s" % class_name
-#	p = models.signup_info(name=student_Name,phone=phonenum,education=educa,classname=class_name)
-#	p.save() 
+	print "education %s" % educa 
+	newclass = models.new_classes.objects.get(class_name=class_name)	
+	p = models.signup_info(name=student_Name,phone=phonenum,eudcation=educa,classname=newclass)
+	p.save() 
 	return HttpResponse(text)
