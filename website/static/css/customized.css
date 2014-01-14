@@ -285,4 +285,31 @@ form .span4_1{
 	width:100%;
 	text-align:center;
 }
+.recruit span{
+	font-size:18px;
+}
+@media (max-width: 767px){
+	.recruit span{
+		font-size:16px;
+	}
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	 .recruit span{
+              font-size:18px;
+        }
+
+}
+
+@media (min-width:980px){
+	.recruit span{
+		font-size:20px;
+	}
+}
+@media (min-width:1200px){
+	.recruit span{
+		font-size:24px;
+	}
+}
 

@@ -19,12 +19,12 @@
 	<script type="text/javascript">
 		function commitSignup(){
 			$('.warntip').remove();
-			var name = $("#signname").val(),educa = $("#education").val(),phone=$("#signPhoneNum").val(),classn = $("#signClassName").val();
+			var name = $("#signname").val(),educa = $("#education").val(),phone=$("#signPhoneNum").val(),classn = $("#signClassName").val(),msg = $("#message").val();
 			if(name == "" || phone ==""){
 				$("#modal-container-4393").append("<p class='warntip'>请填写完整再提交</p>");
 				return;
 			}
-			var data = {"name":name,"education":educa,"phoneNum":phone,"className":classn};
+			var data = {"name":name,"education":educa,"phoneNum":phone,"className":classn,"message":msg};
 				
 			 $.post('/signupclass/',data,function(data) {
                 			if(data == "ok")
@@ -90,7 +90,8 @@
 					{%endfor%}
                 			{%endif%}					
 					</select>
-		
+					<label for="comment"> 备注:</label>
+					<textarea class="span4" rows="4" id="message" style="width:90%" placeholder=""></textarea>	
 				</div>
 				<div class="modal-footer">
 					 <button class="btn btn-primary"  onclick="commitSignup()">提交</button> 
