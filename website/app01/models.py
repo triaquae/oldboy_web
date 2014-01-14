@@ -29,7 +29,7 @@ class questions(models.Model):
                 return self.question
 class course_plan(models.Model):
 	name = models.CharField(max_length=50, unique=True)
-        brief = models.TextField()
+        brief = models.CharField(max_length=150)
         img_link = models.CharField(max_length=100, unique=True)
 	headers = models.TextField(blank=True)
 	content = models.TextField()
