@@ -80,7 +80,7 @@ def signupclass(request):
 	phonenum = request.POST['phoneNum']
         msg = request.POST['message']
 	text = "ok"
-	print "education %s" % educa 
+	print "education %s" % educa , msg
 	newclass = models.new_classes.objects.get(class_name=class_name)	
 	p = models.signup_info(name=student_Name,phone=phonenum,eudcation=educa,classname=newclass,message=msg)
 	p.save() 

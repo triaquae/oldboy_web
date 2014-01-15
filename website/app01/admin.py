@@ -25,7 +25,7 @@ class GraduateAdmin(admin.ModelAdmin):
         list_display = ('student_name', 'title','company','color' )
 
 class CoursePlanAdmin(admin.ModelAdmin):
-	list_display = ('name','headers','content')
+	list_display = ('name','brief')
 	class Media:
 		js = (
 		'/static/tinymce/js/tinymce/tinymce.min.js',
@@ -36,7 +36,7 @@ class onLineCourseAdmin(admin.ModelAdmin):
         list_display = ('course_name', 'course_url','description' )
 
 class ClassBriefAdmin(admin.ModelAdmin):
-	list_display = ('headline', 'brief', 'img_link')
+	list_display = ('headline', 'brief')
 
 admin.site.register(course_plan, CoursePlanAdmin)
 admin.site.register(class_list)
@@ -48,3 +48,4 @@ admin.site.register(new_classes,NewClassAdmin)
 admin.site.register(questions,QuestionAdmin)
 admin.site.register(news,NewsAdmin)
 admin.site.register(signup_info,WebUserAdmin)
+admin.site.register(web_user,WebUserAdmin)
