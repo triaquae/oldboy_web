@@ -23,6 +23,9 @@
 			if(name == "" || phone ==""){
 				$("#modal-container-4393").append("<p class='warntip'>请填写完整再提交</p>");
 				return;
+			}else if(!parseInt(phone)){
+				$("#modal-container-4393").append("<p class='warntip'>电话号码请填写有效的数字</p>");
+				return;
 			}
 			var data = {"name":name,"education":educa,"phoneNum":phone,"className":classn,"message":msg};
 				

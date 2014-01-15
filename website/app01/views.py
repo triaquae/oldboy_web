@@ -74,14 +74,16 @@ def news(request):
 def contact(request):
 	return render_to_response('contact.html',{'tabname':'contact'})
 def signupclass(request):
-	class_name = request.POST['className']
-	student_Name = request.POST['name']
-	educa = request.POST['education']
-	phonenum = request.POST['phoneNum']
-        msg = request.POST['message']
-	text = "ok"
-	print "education %s" % educa , msg
-	newclass = models.new_classes.objects.get(class_name=class_name)	
-	p = models.signup_info(name=student_Name,phone=phonenum,eudcation=educa,classname=newclass,message=msg)
-	p.save() 
+	try:
+		class_name = request.POST['className']
+		student_Name = request.POST['name']
+		educa = request.POST['education']
+		phonenum = request.POST['phoneNum']
+        	msg = request.POST['message']
+		newclass = models.new_classes.objects.get(class_name=class_name)	
+		p = models.signup_info(name=student_Name,phone=phonenum,eudcation=educa,classname=newclass,message=msg)
+		p.save()
+	        text = "ok"
+	except Exception:
+		text = "error"	 
 	return HttpResponse(text)
